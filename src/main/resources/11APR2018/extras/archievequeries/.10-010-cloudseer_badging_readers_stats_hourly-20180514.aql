@@ -1,0 +1,31 @@
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in [ "Access Granted", "Denied, Badge Not in Panel", "Invalid Access Level", "Invalid Badge", "Inactive Badge" ]
+FOR device in [
+  "609-4-01 New Lane 2 Exit -CR",
+  "610-2-01 Center Entry Lane",
+  "613-1-01 BT TRNSTLE IN",
+  "609-4-00 New Lane 1 Exit -CR",
+  "613-4-00 SERVICE OUT -CR",
+  "610-3-00 East Entry Lane",
+  "610-4-01 Handicap Exit Lane",
+  "613-2-00 BT TRNSTLE OUT",
+  "609-3-01 New Lane 2 Entry -CR",
+  "609-3-00 New Lane 1 Entry -CR",
+  "610-2-00 Center Exit Lane",
+  "613-4-01 SERVICE IN -CR",
+  "610-1-01 West Exit Lane",
+  "610-3-01 East Exit Lane",
+  "610-4-00 Handicap Entry Lane",
+  "610-1-00 West Entry Lane -CR"
+]
+	FILTER j.hour == h AND j.event.Event == ev AND j.event.Device == device
+	COLLECT  event = j.event.Event, dev = j.event.Device, hour = j.hour, bucket = j.bucket WITH count into length
+	INSERT { "activities" : {
+	    type: event,
+	    lane: dev,
+	    hour: hour,
+	    bucket: bucket,
+		size: length
+	}
+	} INTO cloudseer_badging_readers_stats_hourly`).getExtra()

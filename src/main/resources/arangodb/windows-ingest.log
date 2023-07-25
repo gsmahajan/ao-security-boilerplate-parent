@@ -1,0 +1,2527 @@
+
+RH0161@ALIPL5107 MINGW64 /d/apporchid/security-workspace/ao-security-boilerplate-parent/src/main/resources/11APR2018
+$ ./ingest.sh
+03/05/2018-15:04:22 # WARNING #  ./ingest.sh - Lift Off Initiate - IN T minus 10..9..8..7..6..5..4..3..2..1..go
+03/05/2018-15:04:22 # INFO    #  AppOrchid Inc - 2018 - author: girish.mahajan@accionlabs.com
+./ingest.sh: line 173: cd: /apporchid/solutions/awsecurity/data/11APR2018/: No such file or directory
+03/05/2018-15:04:22 # INFO    #  fetching all collections from arangodb
+./ingest.sh: line 46: python: command not found
+03/05/2018-15:04:23 # INFO    #  fetching all collections from arangodb
+./ingest.sh: line 46: python: command not found
+03/05/2018-15:04:25 # WARNING #  removing foxx service cloudseer
+HTTP/1.1 503 Service Unavailable
+X-Content-Type-Options: nosniff
+Server: ArangoDB
+Connection: Keep-Alive
+Content-Type: application/json; charset=utf-8
+Content-Length: 0
+
+03/05/2018-15:04:25 # WARNING #  creating hollow foxx service cloudseer
+HTTP/1.1 100 (Continue)
+
+HTTP/1.1 503 Service Unavailable
+X-Content-Type-Options: nosniff
+Server: ArangoDB
+Connection: Keep-Alive
+Content-Type: application/json; charset=utf-8
+Content-Length: 0
+
+03/05/2018-15:04:26 # INFO    #  truncate collections
+03/05/2018-15:04:26 # INFO    #  deleting vpn_network_device
+03/05/2018-15:04:26 # INFO    #  deleting peoples
+03/05/2018-15:04:27 # INFO    #  deleting badging_stations
+03/05/2018-15:04:27 # INFO    #  deleting badge_panels
+03/05/2018-15:04:27 # INFO    #  deleting badge_readers
+03/05/2018-15:04:28 # INFO    #  deleting laptops
+03/05/2018-15:04:28 # INFO    #  deleting lenel_statuses
+03/05/2018-15:04:28 # INFO    #  deleting time_buckets
+{"code":200,"error":false,"id":"505701"}03/05/2018-15:04:29 # INFO    #  deleting source_active_directory_samples
+{"code":200,"error":false,"id":"505707"}03/05/2018-15:04:29 # INFO    #  deleting source_myaccess
+{"code":200,"error":false,"id":"505713"}03/05/2018-15:04:30 # INFO    #  deleting source_badges_users_mappings
+{"code":200,"error":false,"id":"505719"}03/05/2018-15:04:30 # INFO    #  deleting source_lenels
+{"code":200,"error":false,"id":"505725"}03/05/2018-15:04:30 # INFO    #  deleting source_vpns
+{"code":200,"error":false,"id":"505731"}03/05/2018-15:04:31 # INFO    #  deleting badging_readers_stats_hourly
+{"code":200,"error":false,"id":"505737"}03/05/2018-15:04:31 # INFO    #  deleting badging_total_stats_hourly
+{"code":200,"error":false,"id":"505743"}03/05/2018-15:04:32 # INFO    #  deleting badging_pattern_stats_hourly
+{"code":200,"error":false,"id":"505749"}03/05/2018-15:04:32 # INFO    #  deleting badging_out_stats_hourly
+{"code":200,"error":false,"id":"505755"}03/05/2018-15:04:32 # INFO    #  deleting badging_activities_per_status_pattern_stats_daily
+{"code":200,"error":false,"id":"505761"}03/05/2018-15:04:33 # INFO    #  deleting badging_activities_per_status_pattern_stats_hourly
+{"code":200,"error":false,"id":"505767"}03/05/2018-15:04:33 # INFO    #  deleting badging_entry_exit_stats_hourly
+{"code":200,"error":false,"id":"505773"}03/05/2018-15:04:34 # INFO    #  deleting daywise_hourwise_stats_per_bucket
+{"code":200,"error":false,"id":"505779"}03/05/2018-15:04:34 # INFO    #  deleting daily_hourwise_total_badging
+{"code":200,"error":false,"id":"505785"}03/05/2018-15:04:34 # INFO    #  deleting daily_hourwise_total_persons
+{"code":200,"error":false,"id":"505791"}03/05/2018-15:04:35 # INFO    #  deleting alltime_hourwise_total_persons
+{"code":200,"error":false,"id":"505797"}03/05/2018-15:04:35 # INFO    #  deleting vpn_timebuckets
+{"code":200,"error":false,"id":"505803"}03/05/2018-15:04:36 # INFO    #  deleting stats_activities_vpn_identities_per_hour
+{"code":200,"error":false,"id":"505809"}03/05/2018-15:04:36 # INFO    #  deleting stats_activities_vpn_statuses_per_hour
+{"code":200,"error":false,"id":"505815"}03/05/2018-15:04:36 # INFO    #  deleting stats_activities_vpn_nw_device_per_hour
+{"code":200,"error":false,"id":"505821"}03/05/2018-15:04:37 # INFO    #  deleting identity_extractions
+{"code":200,"error":false,"id":"505827"}03/05/2018-15:04:37 # INFO    #  deleting vpn_identities_daywise_hourwise
+{"code":200,"error":false,"id":"505833"}03/05/2018-15:04:38 # INFO    #  deleting badge_identities_daywise_hourwise
+{"code":200,"error":false,"id":"505848"}03/05/2018-15:04:38 # INFO    #  deleting badge_reader_event_trans
+{"code":200,"error":false,"id":"505854"}03/05/2018-15:04:40 # INFO    #  creating vpn_network_device
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:40 # INFO    #  creating peoples
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:40 # INFO    #  creating badging_stations
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:41 # INFO    #  creating badge_panels
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:41 # INFO    #  creating badge_readers
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:41 # INFO    #  creating laptops
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:42 # INFO    #  creating lenel_statuses
+{"error":true,"errorMessage":"duplicate name","code":409,"errorNum":1207}03/05/2018-15:04:42 # INFO    #  creating time_buckets
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843416","id":"843416","name":"cloudseer_time_buckets","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:43 # INFO    #  creating source_active_directory_samples
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843422","id":"843422","name":"cloudseer_source_active_directory_samples","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:43 # INFO    #  creating source_myaccess
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843428","id":"843428","name":"cloudseer_source_myaccess","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:43 # INFO    #  creating source_badges_users_mappings
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843434","id":"843434","name":"cloudseer_source_badges_users_mappings","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:44 # INFO    #  creating source_lenels
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843440","id":"843440","name":"cloudseer_source_lenels","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:44 # INFO    #  creating source_vpns
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843446","id":"843446","name":"cloudseer_source_vpns","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:44 # INFO    #  creating badging_readers_stats_hourly
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843452","id":"843452","name":"cloudseer_badging_readers_stats_hourly","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:45 # INFO    #  creating badging_total_stats_hourly
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843458","id":"843458","name":"cloudseer_badging_total_stats_hourly","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:45 # INFO    #  creating badging_pattern_stats_hourly
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843464","id":"843464","name":"cloudseer_badging_pattern_stats_hourly","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:46 # INFO    #  creating badging_out_stats_hourly
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843470","id":"843470","name":"cloudseer_badging_out_stats_hourly","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:46 # INFO    #  creating badging_activities_per_status_pattern_stats_daily
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843476","id":"843476","name":"cloudseer_badging_activities_per_status_pattern_stats_daily","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:46 # INFO    #  creating badging_activities_per_status_pattern_stats_hourly
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843482","id":"843482","name":"cloudseer_badging_activities_per_status_pattern_stats_hourly","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:47 # INFO    #  creating badging_entry_exit_stats_hourly
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843488","id":"843488","name":"cloudseer_badging_entry_exit_stats_hourly","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:47 # INFO    #  creating daywise_hourwise_stats_per_bucket
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843494","id":"843494","name":"cloudseer_daywise_hourwise_stats_per_bucket","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:48 # INFO    #  creating daily_hourwise_total_badging
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843500","id":"843500","name":"cloudseer_daily_hourwise_total_badging","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:48 # INFO    #  creating daily_hourwise_total_persons
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843506","id":"843506","name":"cloudseer_daily_hourwise_total_persons","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:49 # INFO    #  creating alltime_hourwise_total_persons
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843518","id":"843518","name":"cloudseer_alltime_hourwise_total_persons","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:49 # INFO    #  creating vpn_timebuckets
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843524","id":"843524","name":"cloudseer_vpn_timebuckets","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:49 # INFO    #  creating stats_activities_vpn_identities_per_hour
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843530","id":"843530","name":"cloudseer_stats_activities_vpn_identities_per_hour","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:50 # INFO    #  creating stats_activities_vpn_statuses_per_hour
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843545","id":"843545","name":"cloudseer_stats_activities_vpn_statuses_per_hour","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:50 # INFO    #  creating stats_activities_vpn_nw_device_per_hour
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843551","id":"843551","name":"cloudseer_stats_activities_vpn_nw_device_per_hour","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:50 # INFO    #  creating identity_extractions
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843557","id":"843557","name":"cloudseer_identity_extractions","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:51 # INFO    #  creating vpn_identities_daywise_hourwise
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843563","id":"843563","name":"cloudseer_vpn_identities_daywise_hourwise","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:51 # INFO    #  creating badge_identities_daywise_hourwise
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843569","id":"843569","name":"cloudseer_badge_identities_daywise_hourwise","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:52 # INFO    #  creating badge_reader_event_trans
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843575","id":"843575","name":"cloudseer_badge_reader_event_trans","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":2,"waitForSync":false}03/05/2018-15:04:53 # INFO    #  deleting are_in
+{"code":200,"error":false,"id":"505872"}03/05/2018-15:04:53 # INFO    #  deleting owns
+{"code":200,"error":false,"id":"505878"}03/05/2018-15:04:53 # INFO    #  deleting creates
+{"code":200,"error":false,"id":"505884"}03/05/2018-15:04:54 # INFO    #  creating edge - are_in
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843593","id":"843593","name":"cloudseer_are_in","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":3,"waitForSync":false}03/05/2018-15:04:54 # INFO    #  creating edge - owns
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843599","id":"843599","name":"cloudseer_owns","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":3,"waitForSync":false}03/05/2018-15:04:55 # INFO    #  creating edge - creates
+{"code":200,"error":false,"doCompact":true,"journalSize":33554432,"globallyUniqueId":"hB7C02E5CD15A/843605","id":"843605","name":"cloudseer_creates","indexBuckets":8,"isSystem":false,"isVolatile":false,"keyOptions":{"type":"traditional","allowUserKeys":true,"lastValue":0},"status":3,"statusString":"loaded","type":3,"waitForSync":false}03/05/2018-15:04:56 # INFO    #  unloading alerts
+{"error":true,"errorMessage":"collection not found","code":404,"errorNum":1203}03/05/2018-15:04:56 # INFO    #  unloading settings
+{"error":true,"errorMessage":"collection not found","code":404,"errorNum":1203}03/05/2018-15:04:56 # INFO    #  unloading premises
+{"error":true,"errorMessage":"collection not found","code":404,"errorNum":1203}03/05/2018-15:04:57 # INFO    #  unloading locations
+{"error":true,"errorMessage":"collection not found","code":404,"errorNum":1203}03/05/2018-15:04:57 # INFO    #  unloading security_team
+{"error":true,"errorMessage":"collection not found","code":404,"errorNum":1203}03/05/2018-15:04:57 # INFO    #  unloading source_inventories
+{"error":true,"errorMessage":"collection not found","code":404,"errorNum":1203}03/05/2018-15:04:58 # INFO    #  unloading source_myaccess
+{"code":200,"error":false,"globallyUniqueId":"hB7C02E5CD15A/843428","id":"843428","isSystem":false,"name":"cloudseer_source_myaccess","status":4,"type":2}03/05/2018-15:04:58 # INFO    #  unloading source_active_directory_samples
+{"code":200,"error":false,"globallyUniqueId":"hB7C02E5CD15A/843422","id":"843422","isSystem":false,"name":"cloudseer_source_active_directory_samples","status":4,"type":2}03/05/2018-15:04:58 # WARNING #  Import Collections (5/5)
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_active_directory_samples
+create:                 no
+source filename:        active_directory_sample.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          1
+warnings/errors:  0
+updated/replaced: 0
+ignored:          0
+lines read:       3
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_badges_users_mappings
+create:                 no
+source filename:        badgeIds_userIds_mapping.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          634
+warnings/errors:  0
+updated/replaced: 0
+ignored:          0
+lines read:       637
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_lenels
+create:                 no
+source filename:        jagas_override.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          29623
+warnings/errors:  2259
+updated/replaced: 0
+ignored:          0
+lines read:       31884
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_vpns
+create:                 no
+source filename:        vpn_authentications_sanjay_24_APR_2018/vpn_authentications_2018-09-04_16-36-52.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          1000
+warnings/errors:  0
+updated/replaced: 0
+ignored:          0
+lines read:       1002
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_vpns
+create:                 no
+source filename:        vpn_authentications_sanjay_24_APR_2018/vpn_authentications_2018-09-04_11-36-14.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          998
+warnings/errors:  0
+updated/replaced: 0
+ignored:          0
+lines read:       1000
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_myaccess
+create:                 no
+source filename:        users_new.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          1216
+warnings/errors:  0
+updated/replaced: 0
+ignored:          0
+lines read:       1218
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529', version 3.3.5, database: '_system', username: 'root'
+----------------------------------------
+database:               _system
+collection:             cloudseer_source_gender
+create:                 yes
+source filename:        gender_names.csv
+file type:              csv
+quote:                  "
+separator:
+threads:                2
+connect timeout:        5
+request timeout:        1200
+----------------------------------------
+Starting CSV import...
+
+created:          479
+warnings/errors:  21
+updated/replaced: 0
+ignored:          0
+lines read:       504
+03/05/2018-15:05:30 # INFO    #  RUN MODEL BEGIN - FOR 2018-05-03-1504 - EXPECTING DATA FOR HOUR SLOT - MACHINE ALIPL5107
+03/05/2018-15:05:30 # WARNING #  run pre-processing data
+03/05/2018-15:05:30 # INFO    #  pre-processor begin
+03/05/2018-15:05:30 # WARNING #  run processing data
+03/05/2018-15:05:30 # INFO    #  process begin
+03/05/2018-15:05:39 # INFO    #  RUNNING (1/57) <=== 001-cloudseer_vpn_network_device ===>
+db._query(`FOR v in cloudseer_source_vpns
+FILTER v.Server != null
+COLLECT Network_Device_IP = v.Network_Device_IP, Network_Device = v.Network_Device INTO groups
+INSERT {Network_Device_IP, Network_Device} INTO cloudseer_vpn_network_device`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 3,
+    "writesIgnored" : 0,
+    "scannedFull" : 1998,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.09422564506530762
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:06:19 # INFO    #  RUNNING (2/57) <=== 002-cloudseer_laptops ===>
+db._query(`FOR v in cloudseer_source_vpns
+COLLECT hexmac= v.Endpoint_ID, profile= v.Endpoint_Profile
+
+INSERT {device: "laptop", profile: profile, "model": "Dell 184X", "mac": hexmac  } INTO cloudseer_laptops`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 929,
+    "writesIgnored" : 0,
+    "scannedFull" : 1998,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.08249592781066895
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:06:53 # INFO    #  RUNNING (3/57) <=== 003-cloudseer_time_buckets_repository ===>
+db._query(`FOR j in cloudseer_source_lenels
+COLLECT aj = j, hour = DATE_HOUR(CONCAT(j.ISO_Format, "Z")), dw =DATE_DAY(CONCAT(j.ISO_Format, "Z")), time = CONCAT(j.ISO_Format,"Z"), dm = DATE_MONTH(CONCAT(j.ISO_Format, "Z")), wk = DATE_DAYOFWEEK(CONCAT(j.ISO_Format, "Z")), wkd = DATE_FORMAT(CONCAT(j.ISO_Format, "Z"), "%www"),wn = DATE_ISOWEEK(CONCAT(j.ISO_Format, "Z")) WITH COUNT INTO groups
+INSERT {
+    time: time,
+    hour : hour,
+    day: dw,
+    week: wk,
+    week_number: wn,
+    weekday: wkd,
+    month: dm,
+    bucket: (
+        FOR v in 1..4
+        COLLECT a = hour <= 4 ? 1: 0, b = hour > 4 && hour <=8 ? 1: 0, c = hour > 8 && hour <=12 ? 1: 0, d = hour > 12 && hour <=16 ? 1: 0, e = hour > 16 && hour <=20 ? 1 : 0, f = hour > 20 && hour <= 24 ? 1:0
+        RETURN {
+            a,
+            b,
+            c,
+            d,
+            e,
+            f
+        }
+    ), event: aj
+} INTO cloudseer_time_buckets`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 29623,
+    "writesIgnored" : 0,
+    "scannedFull" : 29623,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 9.820071458816528
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:07:18 # INFO    #  RUNNING (4/57) <=== 004-cloudseer_vpn_timebuckets ===>
+db._query(`FOR j in cloudseer_source_vpns
+COLLECT aj = j, hour = DATE_HOUR(j.Logged_At), dw =DATE_DAY(j.Logged_At), time = j.Logged_At, dm = DATE_MONTH(j.Logged_At), wk = DATE_DAYOFWEEK(j.Logged_At), wkd = DATE_FORMAT(j.Logged_At, "%www"),wn = DATE_ISOWEEK(j.Logged_At) WITH COUNT INTO groups
+INSERT {
+    time: time,
+    hour : hour,
+    day: dw,
+    week: wk,
+    week_number: wn,
+    weekday: wkd,
+    month: dm,
+    bucket: (
+        FOR v in 1..1
+        COLLECT a = hour <= 4 ? 1: 0, b = hour > 4 && hour <=8 ? 1: 0, c = hour > 8 && hour <=12 ? 1: 0, d = hour > 12 && hour <=16 ? 1: 0, e = hour > 16 && hour <=20 ? 1 : 0, f = hour > 20 && hour <= 24 ? 1:0
+        RETURN {
+            a,
+            b,
+            c,
+            d,
+            e,
+            f
+        }
+    ), event: aj
+} INTO cloudseer_vpn_timebuckets`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 1998,
+    "writesIgnored" : 0,
+    "scannedFull" : 1998,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.8780629634857178
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:07:34 # INFO    #  RUNNING (5/57) <=== 005-cloudseer_peoples ===>
+db._query(`FOR v in cloudseer_source_myaccess
+LET identity = v.sAMAccountName
+COLLECT logon = v.sAMAccountName, empId = v.employeeID, empNum = v.employeeNumber, emailAddress = v.mail, since = v.whenCreated, manager = SUBSTITUTE(SPLIT(v.manager, ",")[0], "CN=", ""), under = SUBSTITUTE(SPLIT(v.manager, ",")[1], "OU=", ""), firstName = SPLIT(v.mail, ".")[0], cinfo = [v.mobile, v.telephoneNumber], fullName = v.name, csId = MD5(v.logon), badgeMapping = (
+        FOR b in cloudseer_source_badges_users_mappings
+        FILTER UPPER(identity) == UPPER(b.UserID)
+        RETURN b
+    ), vpnInformation  = (
+        FOR g IN cloudseer_source_vpns
+        FILTER UPPER(identity) == UPPER(g.Identity)
+        LET mac = g.Endpoint_ID
+        COLLECT macd = g.Endpoint_ID, dev = g.Endpoint_Profile,
+        sessions = (FOR q in cloudseer_source_vpns FILTER UPPER(q.Endpoint_ID) == UPPER(mac) RETURN q._id)
+        WITH count INTO length
+        RETURN DISTINCT { rank: 0, mac: macd, dev: dev, size: length, session: sessions }
+    ), vpnTimedInformation  = (
+        FOR r IN cloudseer_vpn_timebuckets
+        FILTER UPPER(identity) == UPPER(r.event.Identity)
+        LET mac = r.event.Endpoint_ID
+        COLLECT macd = r.event.Endpoint_ID, dev = r.event.Endpoint_Profile,
+        sessions = (FOR q in cloudseer_vpn_timebuckets FILTER UPPER(q.event.Endpoint_ID) == UPPER(mac) RETURN q._id)
+        WITH count INTO length
+        RETURN DISTINCT { rank: 0, mac: macd, dev: dev, size: length, session: sessions }
+    )
+INSERT {
+    csId: csId,
+    logon : logon,
+    empId : empId,
+    empNum : empNum,
+    emailAddress: emailAddress,
+    since: since,
+    reports_to: manager,
+    fall_under: under,
+    firstName: firstName,
+    lastName: badgeMapping[0].Surname,
+    displayName: fullName,
+    laptops: (FOR mac in vpnInformation[*].mac FOR lp in cloudseer_laptops FILTER lp.mac == mac RETURN lp._id),
+    badgeId: badgeMapping[0].BadgeId,
+    contactInformation: {
+        mobile: cinfo[0],
+        telephone: cinfo[1]
+    },
+    activities:{
+        vpn: vpnTimedInformation,
+        badge:  (
+            FOR bg IN cloudseer_time_buckets
+            FILTER TO_NUMBER(bg.event.BadgeId) == badgeMapping[0].BadgeId
+            COLLECT place = bg.event.Panel, links = (FOR e in cloudseer_time_buckets FILTER e.event.BadgeId == bg.event.BadgeId AND e.event.Panel == bg.event.Panel RETURN e._id) WITH count into total_badges
+            RETURN {
+                    place: place,
+                    size: total_badges,
+                    links: links
+            })
+    }
+} INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 1128,
+    "writesIgnored" : 0,
+    "scannedFull" : 264642935,
+    "scannedIndex" : 0,
+    "filtered" : 263187905,
+    "httpRequests" : 0,
+    "executionTime" : 315.4985251426697
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:13:02 # INFO    #  RUNNING (6/57) <=== 006-cloudseer_lenel_statuses ===>
+db._query(`FOR l in cloudseer_source_lenels
+COLLECT Event = l.Event WITH count into length
+INSERT {
+    type: Event,
+    occurances: length
+} INTO cloudseer_lenel_statuses`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 5,
+    "writesIgnored" : 0,
+    "scannedFull" : 29623,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.422271728515625
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:13:26 # INFO    #  RUNNING (7/57) <=== 007-cloudseer_badging_total_stats_hourly ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+        FILTER j.hour == h
+        COLLECT bucket = j.bucket, hour = j.hour WITH count into length
+        INSERT  {
+                hour : hour,
+                size: length,
+                bucket: bucket
+        } INTO cloudseer_badging_total_stats_hourly`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 23,
+    "writesIgnored" : 0,
+    "scannedFull" : 29623,
+    "scannedIndex" : 0,
+    "filtered" : 681329,
+    "httpRequests" : 0,
+    "executionTime" : 0.5544242858886719
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:13:49 # INFO    #  RUNNING (8/57) <=== 008-cloudseer_badging_activities_per_status_pattern_stats_daily ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in cloudseer_lenel_statuses
+        FILTER j.hour == h AND j.event.Event == ev.type
+        COLLECT  event = j.event.Event WITH count into length
+        INSERT { "activities" : {
+            type: event,
+                size: length
+        }
+        } INTO cloudseer_badging_activities_per_status_pattern_stats_daily`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 5,
+    "writesIgnored" : 0,
+    "scannedFull" : 325853,
+    "scannedIndex" : 0,
+    "filtered" : 7050274,
+    "httpRequests" : 0,
+    "executionTime" : 3.245488166809082
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:14:15 # INFO    #  RUNNING (9/57) <=== 009-cloudseer_badging_activities_per_status_pattern_stats_hourly ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in [ "Access Granted", "Denied, Badge Not in Panel", "Invalid Access Level", "Invalid Badge", "Inactive Badge" ]
+        FILTER j.hour == h AND j.event.Event == ev
+        COLLECT  event = j.event.Event, hour = j.hour, bucket = j.bucket WITH count into length
+        INSERT { "activities" : {
+            type: event,
+            hour: hour,
+            bucket: bucket,
+                size: length
+        }
+        } INTO cloudseer_badging_activities_per_status_pattern_stats_hourly`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 55,
+    "writesIgnored" : 0,
+    "scannedFull" : 29623,
+    "scannedIndex" : 0,
+    "filtered" : 3525137,
+    "httpRequests" : 0,
+    "executionTime" : 2.5876624584198
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:14:41 # INFO    #  RUNNING (10/57) <=== 010-cloudseer_badging_readers_stats_hourly ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in [ "Access Granted", "Denied, Badge Not in Panel", "Invalid Access Level", "Invalid Badge", "Inactive Badge" ]
+FOR device in [
+  "609-4-01 New Lane 2 Exit -CR",
+  "610-2-01 Center Entry Lane",
+  "613-1-01 BT TRNSTLE IN",
+  "609-4-00 New Lane 1 Exit -CR",
+  "613-4-00 SERVICE OUT -CR",
+  "610-3-00 East Entry Lane",
+  "610-4-01 Handicap Exit Lane",
+  "613-2-00 BT TRNSTLE OUT",
+  "609-3-01 New Lane 2 Entry -CR",
+  "609-3-00 New Lane 1 Entry -CR",
+  "610-2-00 Center Exit Lane",
+  "613-4-01 SERVICE IN -CR",
+  "610-1-01 West Exit Lane",
+  "610-3-01 East Exit Lane",
+  "610-4-00 Handicap Entry Lane",
+  "610-1-00 West Entry Lane -CR"
+]
+        FILTER j.hour == h AND j.event.Event == ev AND j.event.Device == device
+        COLLECT  event = j.event.Event, dev = j.event.Device, hour = j.hour, bucket = j.bucket WITH count into length
+        INSERT { "activities" : {
+            type: event,
+            lane: dev,
+            hour: hour,
+            bucket: bucket,
+                size: length
+        }
+        } INTO cloudseer_badging_readers_stats_hourly`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 338,
+    "writesIgnored" : 0,
+    "scannedFull" : 29623,
+    "scannedIndex" : 0,
+    "filtered" : 56846537,
+    "httpRequests" : 0,
+    "executionTime" : 32.838810443878174
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:15:38 # INFO    #  RUNNING (11/57) <=== 011-cloudseer_badging_entry_exit_stats_hourly ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in cloudseer_lenel_statuses
+FOR ed IN [ "Entry", "Exit", "IN", "OUT"]
+        FILTER j.hour == h AND j.event.Event == ev.type AND CONTAINS(j.event.Device, ed)
+        COLLECT  event = j.event.Event, hour = j.hour, bucket = j.bucket, badgeActivity = ed WITH count into length
+        INSERT { "activities" : {
+            type: event,
+            hour: hour,
+            bucket: bucket,
+            badge_activity: badgeActivity,
+                size: length
+        }
+        } INTO cloudseer_badging_entry_exit_stats_hourly`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 118,
+    "writesIgnored" : 0,
+    "scannedFull" : 28467703,
+    "scannedIndex" : 0,
+    "filtered" : 28378834,
+    "httpRequests" : 0,
+    "executionTime" : 43.57563614845276
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:16:49 # INFO    #  RUNNING (12/57) <=== 012-cloudseer_badging_stats_per_day_average ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR ev in cloudseer_lenel_statuses
+FOR ed IN [ "Entry", "Exit", "IN", "OUT"]
+        FILTER j.hour == h AND j.day == d AND j.event.Event == ev.type AND CONTAINS(j.event.Device, ed)
+        COLLECT  event = j.event.Event, device = ed, dw = j.day, hour = j.hour, month = j.month WITH count into length
+        INSERT { "activities" : {
+            type: event,
+            category: device,
+            day: dw,
+            size: length,
+            day: day,
+            hour:hour,
+            month:month
+        }
+        } INTO cloudseer_badging_stats_per_day_average`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+JavaScript exception in file 'd:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arangosh.js' at 98,7: ArangoError 1203: AQL: collection not found: cloudseer_badging_stats_per_day_average (while parsing)
+!      throw error;
+!      ^
+stacktrace: ArangoError: AQL: collection not found: cloudseer_badging_stats_per_day_average (while parsing)
+    at Object.exports.checkRequestResult (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arangosh.js:96:21)
+    at ArangoStatement.execute (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arango-statement.js:174:12)
+    at Proxy.ArangoDatabase._query (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arango-database.js:950:42)
+    at <shell command>:1:4
+
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:17:15 # INFO    #  RUNNING (13/57) <=== 013-cloudseer_daywise_hourwise_stats_per_bucket ===>
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR m in 1..12
+        FILTER j.hour == h AND d == j.day AND h == j.hour AND m == j.month
+        COLLECT  event = j.event.Event, hour = j.hour, bucket = j.bucket, dw = j.day, dm = j.month WITH count into length
+        INSERT { "activities" : {
+            type: event,
+            day: dw,
+            hour: hour,
+            month: dm,
+            bucket: bucket,
+            size: length
+        }
+} INTO cloudseer_daywise_hourwise_stats_per_bucket`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 524,
+    "writesIgnored" : 0,
+    "scannedFull" : 29623,
+    "scannedIndex" : 0,
+    "filtered" : 264444521,
+    "httpRequests" : 0,
+    "executionTime" : 148.78445863723755
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:20:10 # INFO    #  RUNNING (14/57) <=== 014-cloudseer_daily_hourwise_total_badging ===>
+db._query(`FOR h in 0..23
+COLLECT hourgroup = h, sz = (FOR rw IN cloudseer_daywise_hourwise_stats_per_bucket FILTER rw.activities.hour == h RETURN rw.activities.size)
+INSERT {hour: hourgroup, all_count:SUM(sz), avg: FLOOR(AVERAGE(sz))} INTO cloudseer_daily_hourwise_total_badging`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 24,
+    "writesIgnored" : 0,
+    "scannedFull" : 12576,
+    "scannedIndex" : 0,
+    "filtered" : 12052,
+    "httpRequests" : 0,
+    "executionTime" : 0.05040597915649414
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:20:24 # INFO    #  RUNNING (15/57) <=== 015-cloudseer_daily_hourwise_total_persons ===>
+db._query(`FOR m in 1..12
+FOR d in 1..31
+FOR h in 0..23
+COLLECT hourgroup = h, month = m, day = d, names = (FOR q in cloudseer_time_buckets FILTER q.hour == h AND q.month == m AND q.day == d COLLECT names = q.event.Details INTO groups RETURN DISTINCT UNIQUE(groups[*].q.event.Details))
+INSERT {hourgroup: hourgroup, month:month, day: day, persons: UNIQUE(names)} INTO cloudseer_daily_hourwise_total_persons`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 8928,
+    "writesIgnored" : 0,
+    "scannedFull" : 264474144,
+    "scannedIndex" : 0,
+    "filtered" : 264444521,
+    "httpRequests" : 0,
+    "executionTime" : 142.65341424942017
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:23:16 # INFO    #  RUNNING (16/57) <=== 016-cloudseer_alltime_hourwise_total_persons ===>
+db._query(`FOR h in 0..23
+COLLECT hourgroup = h, names = (FOR q in cloudseer_time_buckets FILTER q.hour == h COLLECT names = q.event.Details INTO groups RETURN DISTINCT UNIQUE(groups[*].q.event.Details))
+INSERT {hourgroup: hourgroup, persons: UNIQUE(names)} INTO cloudseer_alltime_hourwise_total_persons`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 24,
+    "writesIgnored" : 0,
+    "scannedFull" : 710952,
+    "scannedIndex" : 0,
+    "filtered" : 681329,
+    "httpRequests" : 0,
+    "executionTime" : 0.5510458946228027
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:23:31 # INFO    #  RUNNING (17/57) <=== 017-cloudseer_badge_readers ===>
+db._query(`FOR l in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR m in 1..12
+LET badgeInfo = l.event.BadgeId
+FILTER l.hour == h AND l.day == d AND l.month == m
+COLLECT hour = l.hour, day = l.day, month = l.month, panel = l.event.Panel, peoples=(
+        FOR p in cloudseer_peoples
+        FILTER p.badgeId == TO_NUMBER(badgeInfo) AND LENGTH(p.activities.badge) != 0 AND p.activities.badge.session.place == panel
+        RETURN p._id
+        )
+INSERT {
+    panel: panel,
+    hour : hour,
+    day: day,
+    month : month,
+    count: length(peoples),
+    peoples: peoples
+} INTO cloudseer_badge_readers`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 6788,
+    "writesIgnored" : 0,
+    "scannedFull" : 66859111,
+    "scannedIndex" : 0,
+    "filtered" : 331259366,
+    "httpRequests" : 0,
+    "executionTime" : 205.9458167552948
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:27:23 # INFO    #  RUNNING (18/57) <=== 018-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { user_badgecount_alltime: SUM(person.activities.badge[*].size)} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2256,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.06880640983581543
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:27:40 # INFO    #  RUNNING (19/57) <=== 019-cloudseer_stats_activities_vpn_statuses_per_hour ===>
+db._query(`FOR j in cloudseer_vpn_timebuckets
+COLLECT hour = j.hour,  event = j.event.Event WITH count into length
+INSERT { "activities" : {
+            hour: hour,
+            type: event,
+            size: length
+    }
+} INTO cloudseer_stats_activities_vpn_statuses_per_hour`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 4,
+    "writesIgnored" : 0,
+    "scannedFull" : 1998,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.011630535125732422
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:28:04 # INFO    #  RUNNING (20/57) <=== 020-cloudseer_stats_activities_vpn_identities_per_hour ===>
+db._query(`FOR j in cloudseer_vpn_timebuckets
+COLLECT hour = j.hour, identities = (FOR q in cloudseer_vpn_timebuckets FILTER q.hour == j.hour RETURN q.event.Identity)
+INSERT { "activities" : {
+            hour: hour,
+            size : length(identities),
+            users: identities
+        }
+} INTO cloudseer_stats_activities_vpn_identities_per_hour`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 4,
+    "writesIgnored" : 0,
+    "scannedFull" : 3994002,
+    "scannedIndex" : 0,
+    "filtered" : 2911494,
+    "httpRequests" : 0,
+    "executionTime" : 2.309215545654297
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:28:31 # INFO    #  RUNNING (21/57) <=== 021-cloudseer_stats_activities_vpn_nw_device_per_hour ===>
+db._query(`FOR j in cloudseer_vpn_timebuckets
+FOR h in 0..23
+FILTER  j.hour == h
+COLLECT device = j.event.Network_Device, hour = j.hour WITH count INTO length
+INSERT  { "activities":{
+    device: device,
+    hour: hour,
+    size: length
+}
+} INTO cloudseer_stats_activities_vpn_nw_device_per_hour`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 12,
+    "writesIgnored" : 0,
+    "scannedFull" : 1998,
+    "scannedIndex" : 0,
+    "filtered" : 45954,
+    "httpRequests" : 0,
+    "executionTime" : 0.05100893974304199
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:29:01 # INFO    #  RUNNING (22/57) <=== 022-cloudseer_identity_extractions ===>
+db._query(`FOR p in cloudseer_peoples
+FOR d in 1..31
+FOR h in 0..23
+COLLECT name = p.displayName, badgeId = p.badgeId, userId = p.logon, csId = p._id, vpnsession = LENGTH(p.activities.vpn) == 0  ? [] :p.activities.vpn, badgesession = LENGTH(p.activities.badge) == 0 ? [] : p.activities.badge
+INSERT  {
+    name: name,
+    badge: badgeId,
+    userId: userId,
+    csId: csId,
+    vpnsize: (FOR q in cloudseer_vpn_timebuckets FOR j in vpnsession FOR v IN j.session FILTER q._id == v AND j.mac == q.event.Endpoint_ID COLLECT mac = j.mac, hour=q.hour, day=q.day, month = q.month WITH count into length RETURN { mac:mac, hour:hour, day:day, month:month, vpnsize: length}),
+    badgesize: (FOR b in cloudseer_time_buckets FOR h in badgesession FOR f IN h.links FILTER f == b._id COLLECT bhour= b.hour, bday= b.day, bmonth = b.month WITH count into blength RETURN { hour:bhour, day:bday, month:bmonth, badgesize: blength })
+} INTO cloudseer_identity_extractions`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 71339232,
+    "scannedIndex" : 0,
+    "filtered" : 440537816,
+    "httpRequests" : 0,
+    "executionTime" : 516.1945326328278
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:37:52 # INFO    #  RUNNING (23/57) <=== 023-cloudseer_vpn_identities_daywise_hourwise ===>
+db._query(`FOR q in cloudseer_identity_extractions
+FOR r in q.badgesize
+COLLECT name = q.name, id = q.userId, csId = q.csId, badge = q.badge, hour = r.hour, day = r.day, month = r.month, count = r.badgesize
+INSERT {name, id, csId, badge, hour, day, month, count} INTO cloudseer_vpn_identities_daywise_hourwise`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 5567,
+    "writesIgnored" : 0,
+    "scannedFull" : 2256,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.15446877479553223
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:38:16 # INFO    #  RUNNING (24/57) <=== 024-cloudseer_badge_identities_daywise_hourwise ===>
+db._query(`FOR q in cloudseer_identity_extractions
+FOR r in q.badgesize
+COLLECT name = q.name, id = q.userId, csId = q.csId, badge = q.badge, hour = r.hour, day = r.day, month = r.month, count = r.badgesize
+INSERT {name, id, csId, badge, hour, day, month, count} INTO cloudseer_badge_identities_daywise_hourwise`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 5567,
+    "writesIgnored" : 0,
+    "scannedFull" : 2256,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.11761951446533203
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:38:40 # INFO    #  RUNNING (25/57) <=== 025-cloudseer_laptops_updates ===>
+db._query(`FOR laptop in cloudseer_laptops UPDATE laptop WITH { vpn_event_attributes : (FOR people in cloudseer_peoples FOR vpnd IN people.activities.vpn FILTER laptop.mac == vpnd.mac RETURN { session: people.activities.vpn[0].session, user: people.displayName, email: people.emailAddress, logon : people.logon, since: people.since, csId: people._id })} INTO cloudseer_laptops OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 1858,
+    "writesIgnored" : 0,
+    "scannedFull" : 4193506,
+    "scannedIndex" : 0,
+    "filtered" : 2427592,
+    "httpRequests" : 0,
+    "executionTime" : 19.741082906723022
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:39:25 # INFO    #  RUNNING (26/57) <=== 026-cloudseer_owns_edge ===>
+db._query(`FOR a in cloudseer_laptops
+  FOR p in cloudseer_peoples
+   FOR mac in p.activities.vpn[*].mac
+   FILTER mac == a.mac
+INSERT {_from: p._id, _to: a._id } INTO cloudseer_owns`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2672,
+    "writesIgnored" : 0,
+    "scannedFull" : 4193904,
+    "scannedIndex" : 0,
+    "filtered" : 2427592,
+    "httpRequests" : 0,
+    "executionTime" : 11.42015528678894
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:40:04 # INFO    #  RUNNING (27/57) <=== 027-cloudseer_are_in_edge ===>
+db._query(`FOR s in cloudseer_vpn_servers
+  FOR p in cloudseer_badging_stations
+   FILTER s.situated_at == p.station
+INSERT {_from: s._id, _to: p._id} INTO cloudseer_are_in`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+JavaScript exception in file 'd:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arangosh.js' at 98,7: ArangoError 1203: AQL: collection not found: cloudseer_vpn_servers (while parsing)
+!      throw error;
+!      ^
+stacktrace: ArangoError: AQL: collection not found: cloudseer_vpn_servers (while parsing)
+    at Object.exports.checkRequestResult (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arangosh.js:96:21)
+    at ArangoStatement.execute (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arango-statement.js:174:12)
+    at Proxy.ArangoDatabase._query (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arango-database.js:950:42)
+    at <shell command>:1:4
+
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:40:30 # INFO    #  RUNNING (28/57) <=== 028-cloudseer_creates_edge ===>
+db._query(`FOR s in cloudseer_laptops
+  FOR p in cloudseer_vpn_timebuckets
+   FILTER s.mac == p.event.Endpoint_ID
+INSERT {_from: s._id, _to: p._id, type: "vpn_creates" } INTO cloudseer_creates`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 4054,
+    "writesIgnored" : 0,
+    "scannedFull" : 3714142,
+    "scannedIndex" : 0,
+    "filtered" : 3708230,
+    "httpRequests" : 0,
+    "executionTime" : 2.4277231693267822
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:41:02 # INFO    #  RUNNING (29/57) <=== 029-cloudseer_badge_reader_event_trans ===>
+db._query(`FOR l in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR m in 1..12
+LET badgeInfo = l.event.BadgeId
+FILTER l.hour == h AND l.day == d AND l.month == m
+COLLECT hour = l.hour, day = l.day, month = l.month, panel = l.event.Panel, peoples=(
+        FOR p in cloudseer_peoples
+        FILTER p.badgeId == TO_NUMBER(badgeInfo) AND LENGTH(p.activities.badge) != 0 AND p.activities.badge.session.place == panel
+        RETURN p._id
+        )
+INSERT {
+    panel: panel,
+    hour : hour,
+    day: day,
+    month : month,
+    count: length(peoples),
+    peoples: peoples
+} INTO cloudseer_badge_reader_event_trans`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 6788,
+    "writesIgnored" : 0,
+    "scannedFull" : 66859111,
+    "scannedIndex" : 0,
+    "filtered" : 331259366,
+    "httpRequests" : 0,
+    "executionTime" : 193.2619822025299
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:44:31 # INFO    #  RUNNING (30/57) <=== 030-cloudseer_badge_panels ===>
+db._query(`FOR l in cloudseer_time_buckets
+FOR panel in (FOR q in cloudseer_time_buckets RETURN DISTINCT q.event.Panel)
+FILTER UPPER(l.event.Panel) == UPPER(panel)
+COLLECT pn = panel, peoples = (FOR p in cloudseer_peoples
+        FILTER p.activities.badge != NULL
+        FOR ws IN (FOR place in p.activities.badge RETURN place)
+        FILTER UPPER(pn) == UPPER(ws.place)
+        COLLECT displayName = p.displayName, empId = p.empId, badge= p.badgeId, since = p.since, csId = p._id, sessions = ws.links
+        RETURN { displayName, badge, since, empId, csId, sessions }
+        )
+INSERT {
+    panel: pn,
+    size: LENGTH(peoples),
+    badge_event_attributes: peoples
+} INTO cloudseer_badge_panels`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 1,
+    "writesIgnored" : 0,
+    "scannedFull" : 877554008,
+    "scannedIndex" : 0,
+    "filtered" : 477,
+    "httpRequests" : 0,
+    "executionTime" : 206.10195970535278
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-15:48:23 # INFO    #  RUNNING (31/57) <=== 031-cloudseer_peoples ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_badgecount_by_hour: (FOR n in 0..23 FOR q in cloudseer_time_buckets FILTER n == q.hour AND TO_NUMBER(q.event.BadgeId) == person.badgeId COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 1603909968,
+    "scannedIndex" : 0,
+    "filtered" : 1603893069,
+    "httpRequests" : 0,
+    "executionTime" : 869.3254811763763
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:03:17 # INFO    #  RUNNING (32/57) <=== 032-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_alltime_badgecount: (FOR q in cloudseer_time_buckets RETURN DISTINCT LENGTH (cloudseer_time_buckets))[0]} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 66831744,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 101.12347793579102
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:05:25 # INFO    #  RUNNING (33/57) <=== 033-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_badgecount_by_hour: (FOR n in 0..23 FOR q in cloudseer_time_buckets FILTER n == q.hour COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2135112,
+    "scannedIndex" : 0,
+    "filtered" : 2043987,
+    "httpRequests" : 0,
+    "executionTime" : 1.0629971027374268
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:05:58 # INFO    #  RUNNING (34/57) <=== 034-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_badgecount_by_day: (FOR n in 1..31 FOR q in cloudseer_time_buckets FILTER n == q.day AND TO_NUMBER(q.event.BadgeId) == person.badgeId COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Type 'tutorial' for a tutorial or 'help' to see common examples
+
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2071716384,
+    "scannedIndex" : 0,
+    "filtered" : 2071699485,
+    "httpRequests" : 0,
+    "executionTime" : 1168.5188903808594
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:25:49 # INFO    #  RUNNING (35/57) <=== 035-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_badgecount_by_day: (FOR n in 1..31 FOR q in cloudseer_time_buckets FILTER n == q.day COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2757195,
+    "scannedIndex" : 0,
+    "filtered" : 2666070,
+    "httpRequests" : 0,
+    "executionTime" : 1.4876840114593506
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:26:07 # INFO    #  RUNNING (36/57) <=== 036-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_vpncount_by_day: (FOR n in 1..31 FOR q in cloudseer_vpn_timebuckets FILTER n == q.day COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 188070,
+    "scannedIndex" : 0,
+    "filtered" : 179820,
+    "httpRequests" : 0,
+    "executionTime" : 0.16881203651428223
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:26:23 # INFO    #  RUNNING (37/57) <=== 037-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_vpncount_by_day: (FOR q in cloudseer_vpn_timebuckets FOR n in 1..31 FILTER q.day == n AND UPPER(q.event.Identity) == UPPER(person.logon) COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 139734384,
+    "scannedIndex" : 0,
+    "filtered" : 139728880,
+    "httpRequests" : 0,
+    "executionTime" : 70.23183131217957
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:27:49 # INFO    #  RUNNING (38/57) <=== 038-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_vpncount_by_hour: (FOR n in 0..23 FOR q in cloudseer_vpn_timebuckets FILTER n == q.hour COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 146112,
+    "scannedIndex" : 0,
+    "filtered" : 137862,
+    "httpRequests" : 0,
+    "executionTime" : 0.1227264404296875
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:28:08 # INFO    #  RUNNING (39/57) <=== 039-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_alltime_vpncount: (FOR q in cloudseer_vpn_timebuckets RETURN DISTINCT LENGTH (cloudseer_vpn_timebuckets))[0]} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 4509744,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 7.035490989685059
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:28:31 # INFO    #  RUNNING (40/57) <=== 040-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_vpncount_by_hour: (FOR q in cloudseer_vpn_timebuckets FOR n in 0..23 FILTER n == q.hour AND UPPER(q.event.Identity) == UPPER(person.logon) COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 108181968,
+    "scannedIndex" : 0,
+    "filtered" : 108176464,
+    "httpRequests" : 0,
+    "executionTime" : 50.97203493118286
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:29:41 # INFO    #  RUNNING (41/57) <=== 041-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { user_vpncount_alltime: SUM(person.activities.vpn[*].size)} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2256,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.08548521995544434
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:29:57 # INFO    #  RUNNING (42/57) <=== 042-cloudseer_peoples ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_vpncount_by_weekday: (FOR n in 1..7 FOR q in cloudseer_vpn_timebuckets FILTER n == q.week COLLECT bucket_weekday = q.weekday WITH count INTO length RETURN {bucket_weekday:bucket_weekday, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 8250,
+    "scannedIndex" : 0,
+    "filtered" : 36810,
+    "httpRequests" : 0,
+    "executionTime" : 0.10896682739257812
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:30:14 # INFO    #  RUNNING (43/57) <=== 043-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_badgecount_by_weekday: (FOR q in cloudseer_time_buckets FOR n in 1..7 FILTER n == q.week COLLECT bucket_weekday = q.weekday WITH count INTO length RETURN {bucket_weekday:bucket_weekday, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 91125,
+    "scannedIndex" : 0,
+    "filtered" : 533460,
+    "httpRequests" : 0,
+    "executionTime" : 0.4769124984741211
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:30:31 # INFO    #  RUNNING (44/57) <=== 044-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_vpncount_by_week_of_year: (FOR q in cloudseer_vpn_timebuckets FOR n in 1..53 FILTER n == q.week_number COLLECT bucket_week_of_year = n WITH count INTO length RETURN {bucket_week_of_year:bucket_week_of_year, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 319938,
+    "scannedIndex" : 0,
+    "filtered" : 311688,
+    "httpRequests" : 0,
+    "executionTime" : 0.27580881118774414
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:30:48 # INFO    #  RUNNING (45/57) <=== 045-cloudseer_peoples_updates ===>
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_badgecount_by_week_of_year: (FOR q in cloudseer_time_buckets FOR n in 1..53 FILTER n == q.week_number COLLECT bucket_week_of_year = n WITH count INTO length RETURN {bucket_week_of_year:bucket_week_of_year, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 4712313,
+    "scannedIndex" : 0,
+    "filtered" : 4621188,
+    "httpRequests" : 0,
+    "executionTime" : 2.3311541080474854
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:31:06 # INFO    #  RUNNING (46/57) <=== 046-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_badgecount_by_weekday: (FOR q in cloudseer_time_buckets FOR n in 1..7 FILTER n == q.week AND TO_NUMBER(q.event.BadgeId) == person.badgeId COLLECT bucket_week = q.weekday WITH count INTO length RETURN {bucket_week:bucket_week, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 66831744,
+    "scannedIndex" : 0,
+    "filtered" : 467791785,
+    "httpRequests" : 0,
+    "executionTime" : 327.5612704753876
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:36:51 # INFO    #  RUNNING (47/57) <=== 047-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_vpncount_by_weekday: (FOR q in cloudseer_vpn_timebuckets FOR n in 1..7 FILTER q.week == n AND UPPER(q.event.Identity) == UPPER(person.logon) COLLECT bucket_week = q.weekday WITH count INTO length RETURN {bucket_week:bucket_week, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 4509744,
+    "scannedIndex" : 0,
+    "filtered" : 31549566,
+    "httpRequests" : 0,
+    "executionTime" : 26.215463876724243
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:37:35 # INFO    #  RUNNING (48/57) <=== 048-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_badgecount_by_week_of_year: (FOR q in cloudseer_time_buckets FOR n in 1..53 FILTER q.week_number == n AND TO_NUMBER(q.event.BadgeId) == person.badgeId COLLECT bucket_week_of_year = n WITH count INTO length RETURN {bucket_week_of_year:bucket_week_of_year, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+JavaScript exception in file 'd:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arangosh.js' at 98,7: ArangoError 2001: Error reading from: 'http+tcp://127.0.0.1:8529' 'timeout during read'
+!      throw error;
+!      ^
+stacktrace: ArangoError: Error reading from: 'http+tcp://127.0.0.1:8529' 'timeout during read'
+    at Object.exports.checkRequestResult (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arangosh.js:96:21)
+    at ArangoStatement.execute (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arango-statement.js:174:12)
+    at Proxy.ArangoDatabase._query (d:\apporchid\ArangoDB\ArangoDB3-3.3.5-1_win64\usr\share\arangodb3\js\client\modules\@arangodb\arango-database.js:950:42)
+    at <shell command>:1:4
+
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-16:57:52 # INFO    #  RUNNING (49/57) <=== 049-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_vpncount_by_week_of_year: (FOR q in cloudseer_vpn_timebuckets FOR n in 1..53 FILTER q.week_number == n AND UPPER(q.event.Identity) == UPPER(person.logon) COLLECT bucket_week_of_year = n WITH count INTO length RETURN {bucket_week_of_year:bucket_week_of_year, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+\
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 238899120,
+    "scannedIndex" : 0,
+    "filtered" : 238893616,
+    "httpRequests" : 0,
+    "executionTime" : 752.4840831756592
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:10:44 # INFO    #  RUNNING (50/57) <=== 050-cloudseer_people_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { since: ( LET months = [ "January", "Feberuary", "March", "April", "May", "June", "July", "August", "Sepetember", "October", "November", "December" ] FOR e in cloudseer_source_myaccess FILTER e.sAMAccountName == person.logon COLLECT since = e.whenCreated RETURN { value: concat (months[TO_NUMBER(SUBSTRING(since, 4,2))-1],", ",SUBSTRING(since,0,4))})[0].value} INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2745552,
+    "scannedIndex" : 0,
+    "filtered" : 2740864,
+    "httpRequests" : 0,
+    "executionTime" : 1.6296625137329102
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:11:06 # INFO    #  RUNNING (51/57) <=== 051-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { reports_to_id: (FOR e in cloudseer_peoples FILTER e.displayName == person.reports_to RETURN { value : e._id })[0].value } INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 5091792,
+    "scannedIndex" : 0,
+    "filtered" : 5088380,
+    "httpRequests" : 0,
+    "executionTime" : 3.532930612564087
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:11:27 # INFO    #  RUNNING (52/57) <=== 052-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { manages: (FOR e in cloudseer_peoples FILTER e.reports_to_id == person._id RETURN { name:e.displayName, link : e._id }) } INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 5091792,
+    "scannedIndex" : 0,
+    "filtered" : 5088958,
+    "httpRequests" : 0,
+    "executionTime" : 4.872175455093384
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:11:50 # INFO    #  RUNNING (53/57) <=== 053-cloudseer_peoples_updates-profile ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { profile: "development", contactInformation: {mobile: "mobileValue", telephone: "telephoneValue"}, emailAddress: "nobody@nowhere.com" } INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2256,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.09754109382629395
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:12:10 # INFO    #  RUNNING (54/57) <=== 054-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { gender: (FOR g in cloudseer_source_gender FILTER g.firstname == person.firstName RETURN g.gender)[0] } INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 3244128,
+    "scannedIndex" : 0,
+    "filtered" : 3235260,
+    "httpRequests" : 0,
+    "executionTime" : 1.683393955230713
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:12:30 # INFO    #  RUNNING (55/57) <=== 055-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { lanes: (FOR l in (FOR q in person.activities.badge[*].links FOR g in DOCUMENT(q) COLLECT lane = g.event.Device with count into length RETURN { lane:lane, count:length }) SORT l.count DESC,  l.lane RETURN l) } INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 2256,
+    "scannedIndex" : 0,
+    "filtered" : 0,
+    "httpRequests" : 0,
+    "executionTime" : 0.1399528980255127
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:12:47 # INFO    #  RUNNING (56/57) <=== 056-cloudseer_peoples_updates ===>
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { vpn_network_devices: (FOR l in (FOR q in person.activities.vpn[*].session FOR g in DOCUMENT(q) COLLECT nd = g.event.Network_Device, loc = g.event.Location with count into length RETURN { device_id: (FOR o in cloudseer_vpn_network_device FILTER o.Network_Device == nd RETURN o._id)[0], name:nd, location: loc, count:length }) SORT l.count DESC,  l.network_device, l.location RETURN l) } INTO cloudseer_peoples`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 2256,
+    "writesIgnored" : 0,
+    "scannedFull" : 7662,
+    "scannedIndex" : 0,
+    "filtered" : 3604,
+    "httpRequests" : 0,
+    "executionTime" : 0.18062353134155273
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:13:07 # INFO    #  RUNNING (57/57) <=== 057-cloudseer_edge_creates ===>
+db._query(`FOR s in cloudseer_laptops
+  FOR p in cloudseer_vpn_timebuckets
+   FILTER s.mac == p.event.Endpoint_ID
+INSERT {_from: s._id, _to: p._id, type: "vpn_creates" } INTO cloudseer_creates`).getExtra()
+
+                                       _
+  __ _ _ __ __ _ _ __   __ _  ___  ___| |__
+ / _` | '__/ _` | '_ \ / _` |/ _ \/ __| '_ \
+| (_| | | | (_| | | | | (_| | (_) \__ \ | | |
+ \__,_|_|  \__,_|_| |_|\__, |\___/|___/_| |_|
+                       |___/
+
+arangosh (ArangoDB 3.3.5 [win64] 64bit, using build tags/v3.3.5-0-ga3073bec2a, VPack 0.1.30, RocksDB 5.6.0, ICU 58.1, V8 5.7.492.77, OpenSSL 1.0.2a 19 Mar 2015)
+Copyright (c) ArangoDB GmbH
+
+Pretty printing values.
+Connected to ArangoDB 'http+tcp://127.0.0.1:8529' version: 3.3.5 [server], database: '_system', username: 'root'
+
+Please note that a new bugfix version '3.3.8' is available
+Type 'tutorial' for a tutorial or 'help' to see common examples
+{
+  "stats" : {
+    "writesExecuted" : 4054,
+    "writesIgnored" : 0,
+    "scannedFull" : 3714142,
+    "scannedIndex" : 0,
+    "filtered" : 3708230,
+    "httpRequests" : 0,
+    "executionTime" : 2.157848834991455
+  },
+  "warnings" : [ ]
+}
+
+
+Uf wiederluege! 再见！ Na shledanou! Auf Wiedersehen! Bye Bye! Adiau! ¡Hasta luego! Εις το επανιδείν!
+להתראות! Arrivederci! Tot ziens! Adjö! Au revoir! さようなら До свидания! Até Breve! خداحافظ! Uz redzēšanos!
+03/05/2018-17:13:13 # WARNING #  run post-processing data
+03/05/2018-17:13:13 # WARNING #  Inside postProcessor
+./ingest.sh: line 145: python: command not found
+curl: (23) Failed writing body (0 != 6408)
+./ingest.sh: line 129: python: command not found
+curl: (23) Failed writing body (0 != 6408)
+03/05/2018-17:13:14 # WARNING #  EXPORT DIRECTORY = /d/apporchid/security-workspace/ao-security-boilerplate-parent/src/main/resources/11APR2018/export/
+ls: cannot access '/d/apporchid/security-workspace/ao-security-boilerplate-parent/src/main/resources/11APR2018/export/': No such file or directory
+ls: cannot access '/d/apporchid/security-workspace/ao-security-boilerplate-parent/src/main/resources/11APR2018/export/': No such file or directory
+{
+1998    cloudseer_vpn_timebuckets
+1437    cloudseer_source_gender
+2256    cloudseer_identity_extractions
+1       cloudseer_source_active_directory_samples
+24      cloudseer_alltime_hourwise_total_persons
+6       cloudseer_vpn_network_device
+29623   cloudseer_time_buckets
+2256    cloudseer_peoples
+0       cloudseer_badging_stations
+1       cloudseer_badge_panels
+1998    cloudseer_source_vpns
+6788    cloudseer_badge_readers
+1858    cloudseer_laptops
+10      cloudseer_lenel_statuses
+338     cloudseer_badging_readers_stats_hourly
+5567    cloudseer_badge_identities_daywise_hourwise
+634     cloudseer_source_badges_users_mappings
+1216    cloudseer_source_myaccess
+29623   cloudseer_source_lenels
+0       cloudseer_are_in
+23      cloudseer_badging_total_stats_hourly
+0       cloudseer_badging_pattern_stats_hourly
+8108    cloudseer_creates
+0       cloudseer_badging_out_stats_hourly
+5       cloudseer_badging_activities_per_status_pattern_stats_daily
+55      cloudseer_badging_activities_per_status_pattern_stats_hourly
+118     cloudseer_badging_entry_exit_stats_hourly
+524     cloudseer_daywise_hourwise_stats_per_bucket
+5567    cloudseer_vpn_identities_daywise_hourwise
+24      cloudseer_daily_hourwise_total_badging
+8928    cloudseer_daily_hourwise_total_persons
+4       cloudseer_stats_activities_vpn_identities_per_hour
+4       cloudseer_stats_activities_vpn_statuses_per_hour
+12      cloudseer_stats_activities_vpn_nw_device_per_hour
+6788    cloudseer_badge_reader_event_trans
+2672    cloudseer_owns
+03/05/2018-17:13:27 # WARNING #  finished. script were started at 2018-05-03-1504
+

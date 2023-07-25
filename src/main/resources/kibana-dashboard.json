@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "b962c470-3107-11e8-b23b-0d619fcf0a96",
+    "_type": "search",
+    "_source": {
+      "title": "Badge Event",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "Badgeid",
+        "Received_At",
+        "Event",
+        "Display"
+      ],
+      "sort": [
+        "Received_At",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"b635b250-3105-11e8-b23b-0d619fcf0a96\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "b6877760-31ab-11e8-b23b-0d619fcf0a96",
+    "_type": "search",
+    "_source": {
+      "title": "Badge Entries",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "Received_At",
+        "Detail1",
+        "Display",
+        "Time",
+        "Date"
+      ],
+      "sort": [
+        "Received_At",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"b635b250-3105-11e8-b23b-0d619fcf0a96\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "6c27cd40-3107-11e8-b23b-0d619fcf0a96",
+    "_type": "visualization",
+    "_source": {
+      "title": "TestFoo",
+      "visState": "{\"title\":\"TestFoo\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Percentiles of Badgeid\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Percentiles of Badgeid\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Badgeid\",\"percents\":[1,5,25,50,75,95,99,100]}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"b635b250-3105-11e8-b23b-0d619fcf0a96\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]

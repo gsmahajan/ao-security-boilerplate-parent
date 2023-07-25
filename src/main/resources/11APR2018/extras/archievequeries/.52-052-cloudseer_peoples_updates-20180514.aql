@@ -1,0 +1,1 @@
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { manages: (FOR e in cloudseer_peoples FILTER e.reports_to_id == person._id RETURN { name:e.displayName, link : e._id }) } INTO cloudseer_peoples`).getExtra()

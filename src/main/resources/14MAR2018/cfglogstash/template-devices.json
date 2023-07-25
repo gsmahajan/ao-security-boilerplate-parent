@@ -1,0 +1,65 @@
+{
+  "template": "mso_devices",
+  "version": 1,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mso_devices": {
+    "mappings": {
+      "doc": {
+        "properties": {
+          "Device_Port": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "Endpoint_Ip_Address": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "Network_Device_Ip": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "Network_Device_Name": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "Server": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

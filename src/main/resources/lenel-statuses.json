@@ -1,0 +1,28 @@
+{
+	statuses = [
+		"Communications Lost",
+		"Communications Restored",
+		"Inactive Badge",
+		"Reader Mode Card and Pin",
+		"Input Masked",
+		"Input Unmasked",
+		"Denied, Badge Not in Panel",
+		"Door Held Open Canceled",
+		"Door Held Open",
+		"Denied",
+		"Alarm Active",
+		"Alarm Canceled",
+		"Runaway Device Restored",
+		"Runaway Device",
+		"Invalid Badge",
+		"Invalid PIN Number",
+		"Reader Mode Card Only",
+		"Reader Mode Unlocked",
+		"Invalid Access Level",
+		"Invalid Card Format",
+		"Door Forced Open Canceled",
+		"Door Forced Open",
+		"Door Unlocked",
+		"Access Granted"
+		]
+}

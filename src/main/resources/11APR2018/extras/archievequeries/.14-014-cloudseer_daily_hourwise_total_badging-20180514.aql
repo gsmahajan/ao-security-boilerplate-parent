@@ -1,0 +1,3 @@
+db._query(`FOR h in 0..23
+COLLECT hourgroup = h, sz = (FOR rw IN cloudseer_daywise_hourwise_stats_per_bucket FILTER rw.activities.hour == h RETURN rw.activities.size)
+INSERT {hour: hourgroup, all_count:SUM(sz), avg: FLOOR(AVERAGE(sz))} INTO cloudseer_daily_hourwise_total_badging`).getExtra()

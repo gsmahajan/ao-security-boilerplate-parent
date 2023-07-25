@@ -1,0 +1,8 @@
+db._query(`FOR j in cloudseer_vpn_timebuckets
+COLLECT hour = j.hour, identities = (FOR q in cloudseer_vpn_timebuckets FILTER q.hour == j.hour RETURN q.event.Identity)
+INSERT { "activities" : {
+	    hour: hour,
+	    size : length(identities),
+	    users: identities
+	}
+} INTO cloudseer_stats_activities_vpn_identities_per_hour`).getExtra()

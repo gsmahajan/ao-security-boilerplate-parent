@@ -1,0 +1,39 @@
+Add in your ~/.bashrc file below functions
+
+function truncate_arangodbs {
+
+for collection in vpn_servers peoples premises sessions badging_stations laptops locations; do curl -u "root:" -X DELETE  http://localhost:8529/_api/collection/awsecurity_$collection; done
+for collection in vpn_servers peoples premises sessions badging_stations laptops locations; do  echo "{ \"name\": \"$(echo "awsecurity_$collection")\" }" > $collection.txt; done
+for collection in vpn_servers peoples premises sessions badging_stations laptops locations; do curl -u "root:" -XPOST --data @$collection.txt http://localhost:8529/_api/collection ; done
+for collection in vpn_servers peoples premises sessions badging_stations laptops locations; do  rm -rf $collection.txt; done
+
+
+for collection in creates owns are_in; do curl -u "root:" -X DELETE  http://localhost:8529/_api/collection/awsecurity_$collection; done
+for collection in creates owns are_in; do  echo "{ \"name\": \"$(echo "awsecurity_$collection")\", \"type\": 3 }" > $collection.txt; done
+for collection in creates owns are_in; do curl -u "root:" -XPOST --data @$collection.txt http://localhost:8529/_api/collection ; done
+for collection in creates owns are_in; do  rm -rf $collection.txt; done
+
+
+# unload few
+
+for collection in premises locations; do curl -u "root:" -XPUT  http://localhost:8529/_api/collection/awsecurity_$collection/unload; done
+
+}
+
+
+Step 1 - Follow https://apporchid.atlassian.net/wiki/spaces/SEC/pages/362643457/Arango+DB+-+Example Linux arangodbimp statements to import raw records
+Step 2 - Run above function to (re)create stuff needed in raw
+Step 3 - Import a json query from attached confluence page
+Step 4 - Login to UI and run step by step each queries to see the data modelling out of Step 1 raw data
+
+
+<VirtualHost *:*>
+    ProxyPreserveHost On
+    ProxyPass        "/" "http://awsnlsec001.amwaternp.net:18529/_db/_system/"
+    ProxyPassReverse "/" "http://10.7.20.148/"
+    ServerName awsnlsec001.amwaternp.net
+</VirtualHost>
+
+
+	
+

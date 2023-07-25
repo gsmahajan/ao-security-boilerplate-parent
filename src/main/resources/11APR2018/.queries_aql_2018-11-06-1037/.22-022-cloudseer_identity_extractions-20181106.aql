@@ -1,0 +1,12 @@
+db._query(`FOR p in cloudseer_peoples
+FOR d in 1..31
+FOR h in 0..23
+COLLECT name = p.displayName, badgeId = p.badgeId, userId = p.logon, csId = p._id, vpnsession = LENGTH(p.activities.vpn) == 0  ? [] :p.activities.vpn, badgesession = LENGTH(p.activities.badge) == 0 ? [] : p.activities.badge
+INSERT  {
+    name: name,
+    badge: badgeId,
+    userId: userId,
+    csId: csId,
+    vpnsize: (FOR q in cloudseer_vpn_timebuckets FOR j in vpnsession FOR v IN j.session FILTER q._id == v AND j.mac == q.event.Endpoint_ID COLLECT mac = j.mac, hour=q.hour, day=q.day, month = q.month WITH count into length RETURN { mac:mac, hour:hour, day:day, month:month, vpnsize: length}),
+    badgesize: (FOR b in cloudseer_time_buckets FOR h in badgesession FOR f IN h.links FILTER f == b._id COLLECT bhour= b.hour, bday= b.day, bmonth = b.month WITH count into blength RETURN { hour:bhour, day:bday, month:bmonth, badgesize: blength })
+} INTO cloudseer_identity_extractions`).getExtra()

@@ -1,0 +1,1 @@
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_vpncount_by_weekday: (FOR n in 1..7 FOR q in cloudseer_vpn_timebuckets FILTER n == q.week COLLECT bucket_weekday = q.weekday WITH count INTO length RETURN {bucket_weekday:bucket_weekday, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()

@@ -1,0 +1,77 @@
+        curl -X DELETE localhost:9200/_all
+
+
+
+arangoexport --server.password 14edcd1c2b7ff3b42823eac1eeb5d456 --overwrite true --type csv --query "FOR p in cloudseer_peoples COLLECT displayName = p.displayName, logon = p.logon, badgeId = p.badgeId, empNum = p.empNum, empId = p.empId, dbKey = p._id RETURN { displayName, logon, badgeId, empNum, empId, dbKey}" --fields displayName, logon, badgeId, empNum, empId, dbKey
+
+arangoexport --server.password 14edcd1c2b7ff3b42823eac1eeb5d456 --overwrite true --type collection --collection cloudseer_peoples --fields 'displayName, logon, badgeId, empNum, empId, _id'
+
+
+
+
+FOR p in cloudseer_peoples COLLECT displayName = p.displayName, logon = p.logon, badgeId = p.badgeId, empNum = p.empNum, empId = p.empId, dbKey = p._key RETURN { displayName, logon, badgeId, empNum, empId, dbKey}
+
+./logstash -f logstash_peoples.conf
+[mahajag@awsnlsec001 bin]$ cat logstash_peoples.conf
+input {
+        file {
+                path => "/apporchid/solutions/awsecurity/data/11APR2018/logstash_peoples.csv"
+                start_position => "beginning"
+                type => "poc_api_search"
+                sincedb_path => "/dev/null"
+        }
+}
+
+filter {
+        csv {
+                columns =>[
+                        "displayName",
+                        "logon",
+                        "badgeId",
+                        "empNum",
+                        "empId",
+                        "dbKey"
+                ]
+                separator => ","
+        }
+}
+
+
+filter {
+        mutate {
+                convert => { "badgeId" => "integer" }
+        }
+}
+
+output {
+        elasticsearch {
+                index => "awsecurity_search_users"
+        }
+        stdout {
+                 codec => rubydebug {}
+        }
+}
+
+
+curl -XPUT 'http://localhost:9200/_river/arangodb_test_car2/_meta' -d '{
+    "type": "arangodb",
+    "arangodb": {
+        "host": "carhost",
+        "port": carport,
+        "db": "test",
+        "collection": "car",
+        "credentials": {
+            "username": "riveruser",
+            "password": "rivauser"
+        },
+        "reader_min_sleep": "100ms",
+        "reader_max_sleep": "10s",
+        "script" : "ctx.doc.title = ctx.doc.manufacturer + \" \" + ctx.doc.model;"
+    },
+    "index": {
+        "name": "cars",
+        "type": "car",
+        "bulk_size": 5000,
+        "bulk_timeout": "500ms"
+    }
+}'

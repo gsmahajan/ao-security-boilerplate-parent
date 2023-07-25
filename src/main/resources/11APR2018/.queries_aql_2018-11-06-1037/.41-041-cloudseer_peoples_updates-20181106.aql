@@ -1,0 +1,1 @@
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { user_vpncount_alltime: SUM(person.activities.vpn[*].size)} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()

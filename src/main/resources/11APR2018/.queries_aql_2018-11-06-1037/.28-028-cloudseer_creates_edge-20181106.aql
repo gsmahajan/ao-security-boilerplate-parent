@@ -1,0 +1,4 @@
+db._query(`FOR s in cloudseer_laptops
+  FOR p in cloudseer_vpn_timebuckets
+   FILTER s.mac == p.event.Endpoint_ID
+INSERT {_from: s._id, _to: p._id, type: "vpn_creates" } INTO cloudseer_creates`).getExtra()

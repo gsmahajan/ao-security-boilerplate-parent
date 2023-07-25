@@ -1,0 +1,23 @@
+db._query(`FOR j in cloudseer_source_lenels
+COLLECT aj = j, hour = DATE_HOUR(CONCAT(j.ISO_Format, "Z")), dw =DATE_DAY(CONCAT(j.ISO_Format, "Z")), time = CONCAT(j.ISO_Format,"Z"), dm = DATE_MONTH(CONCAT(j.ISO_Format, "Z")), wk = DATE_DAYOFWEEK(CONCAT(j.ISO_Format, "Z")), wkd = DATE_FORMAT(CONCAT(j.ISO_Format, "Z"), "%www"),wn = DATE_ISOWEEK(CONCAT(j.ISO_Format, "Z")) WITH COUNT INTO groups
+INSERT {
+    time: time,
+    hour : hour,
+    day: dw,
+    week: wk,
+    week_number: wn,
+    weekday: wkd,
+    month: dm,
+    bucket: (
+        FOR v in 1..4
+        COLLECT a = hour <= 4 ? 1: 0, b = hour > 4 && hour <=8 ? 1: 0, c = hour > 8 && hour <=12 ? 1: 0, d = hour > 12 && hour <=16 ? 1: 0, e = hour > 16 && hour <=20 ? 1 : 0, f = hour > 20 && hour <= 24 ? 1:0
+        RETURN {
+            a,
+            b,
+            c,
+            d,
+            e,
+            f
+        }
+    ), event: aj
+} INTO cloudseer_time_buckets`).getExtra()

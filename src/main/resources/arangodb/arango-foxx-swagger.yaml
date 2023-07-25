@@ -1,0 +1,3739 @@
+swagger: '2.0'
+basePath: /_db/_system/awsecurity
+paths:
+  /vpns:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all vpns.
+      summary: List all vpns
+      tags:
+        - vpn
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of vpns.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: vpnsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The vpn to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new vpn from the request body and
+        returns the saved document.
+      summary: Create a new vpn
+      tags:
+        - vpn
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created vpn.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The vpn already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: vpnsCreate
+  '/vpns/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the vpn
+          type: string
+          name: key
+          in: path
+      description: Retrieves a vpn by its key.
+      summary: Fetch a vpn
+      tags:
+        - vpn
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The vpn.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: vpnsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the vpn
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the vpn with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing vpn with the request body and
+        returns the new document.
+      summary: Replace a vpn
+      tags:
+        - vpn
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new vpn.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: vpnsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the vpn
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the vpn with.
+          schema:
+            description: The data to update the vpn with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a vpn with the request body and
+        returns the updated document.
+      summary: Update a vpn
+      tags:
+        - vpn
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated vpn.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: vpnsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the vpn
+          type: string
+          name: key
+          in: path
+      description: Deletes a vpn from the database.
+      summary: Remove a vpn
+      tags:
+        - vpn
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: vpnsDelete
+  /lenels:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all lenels.
+      summary: List all lenels
+      tags:
+        - lenel
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of lenels.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: lenelsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The lenel to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new lenel from the request body and
+        returns the saved document.
+      summary: Create a new lenel
+      tags:
+        - lenel
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created lenel.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The lenel already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: lenelsCreate
+  '/lenels/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the lenel
+          type: string
+          name: key
+          in: path
+      description: Retrieves a lenel by its key.
+      summary: Fetch a lenel
+      tags:
+        - lenel
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The lenel.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: lenelsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the lenel
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the lenel with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing lenel with the request body and
+        returns the new document.
+      summary: Replace a lenel
+      tags:
+        - lenel
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new lenel.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: lenelsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the lenel
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the lenel with.
+          schema:
+            description: The data to update the lenel with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a lenel with the request body and
+        returns the updated document.
+      summary: Update a lenel
+      tags:
+        - lenel
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated lenel.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: lenelsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the lenel
+          type: string
+          name: key
+          in: path
+      description: Deletes a lenel from the database.
+      summary: Remove a lenel
+      tags:
+        - lenel
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: lenelsDelete
+  /persons:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all persons.
+      summary: List all persons
+      tags:
+        - person
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of persons.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: personsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The person to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new person from the request body and
+        returns the saved document.
+      summary: Create a new person
+      tags:
+        - person
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created person.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The person already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: personsCreate
+  '/persons/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the person
+          type: string
+          name: key
+          in: path
+      description: Retrieves a person by its key.
+      summary: Fetch a person
+      tags:
+        - person
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The person.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: personsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the person
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the person with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing person with the request body and
+        returns the new document.
+      summary: Replace a person
+      tags:
+        - person
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new person.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: personsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the person
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the person with.
+          schema:
+            description: The data to update the person with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a person with the request body and
+        returns the updated document.
+      summary: Update a person
+      tags:
+        - person
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated person.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: personsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the person
+          type: string
+          name: key
+          in: path
+      description: Deletes a person from the database.
+      summary: Remove a person
+      tags:
+        - person
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: personsDelete
+  /sessions:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all sessions.
+      summary: List all sessions
+      tags:
+        - session
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of sessions.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: sessionsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The session to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new session from the request body and
+        returns the saved document.
+      summary: Create a new session
+      tags:
+        - session
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created session.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The session already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: sessionsCreate
+  '/sessions/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the session
+          type: string
+          name: key
+          in: path
+      description: Retrieves a session by its key.
+      summary: Fetch a session
+      tags:
+        - session
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The session.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: sessionsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the session
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the session with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing session with the request body and
+        returns the new document.
+      summary: Replace a session
+      tags:
+        - session
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new session.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: sessionsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the session
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the session with.
+          schema:
+            description: The data to update the session with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a session with the request body and
+        returns the updated document.
+      summary: Update a session
+      tags:
+        - session
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated session.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: sessionsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the session
+          type: string
+          name: key
+          in: path
+      description: Deletes a session from the database.
+      summary: Remove a session
+      tags:
+        - session
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: sessionsDelete
+  /servers:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all servers.
+      summary: List all servers
+      tags:
+        - server
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of servers.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: serversList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The server to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new server from the request body and
+        returns the saved document.
+      summary: Create a new server
+      tags:
+        - server
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created server.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The server already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: serversCreate
+  '/servers/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the server
+          type: string
+          name: key
+          in: path
+      description: Retrieves a server by its key.
+      summary: Fetch a server
+      tags:
+        - server
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The server.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: serversDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the server
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the server with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing server with the request body and
+        returns the new document.
+      summary: Replace a server
+      tags:
+        - server
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new server.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: serversReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the server
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the server with.
+          schema:
+            description: The data to update the server with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a server with the request body and
+        returns the updated document.
+      summary: Update a server
+      tags:
+        - server
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated server.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: serversUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the server
+          type: string
+          name: key
+          in: path
+      description: Deletes a server from the database.
+      summary: Remove a server
+      tags:
+        - server
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: serversDelete
+  /locations:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all locations.
+      summary: List all locations
+      tags:
+        - location
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of locations.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: locationsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The location to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new location from the request body and
+        returns the saved document.
+      summary: Create a new location
+      tags:
+        - location
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created location.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The location already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: locationsCreate
+  '/locations/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the location
+          type: string
+          name: key
+          in: path
+      description: Retrieves a location by its key.
+      summary: Fetch a location
+      tags:
+        - location
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The location.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: locationsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the location
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the location with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing location with the request body and
+        returns the new document.
+      summary: Replace a location
+      tags:
+        - location
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new location.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: locationsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the location
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the location with.
+          schema:
+            description: The data to update the location with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a location with the request body and
+        returns the updated document.
+      summary: Update a location
+      tags:
+        - location
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated location.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: locationsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the location
+          type: string
+          name: key
+          in: path
+      description: Deletes a location from the database.
+      summary: Remove a location
+      tags:
+        - location
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: locationsDelete
+  /premises:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all premises.
+      summary: List all premises
+      tags:
+        - premise
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of premises.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: premisesList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The premise to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new premise from the request body and
+        returns the saved document.
+      summary: Create a new premise
+      tags:
+        - premise
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created premise.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The premise already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: premisesCreate
+  '/premises/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the premise
+          type: string
+          name: key
+          in: path
+      description: Retrieves a premise by its key.
+      summary: Fetch a premise
+      tags:
+        - premise
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The premise.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: premisesDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the premise
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the premise with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing premise with the request body and
+        returns the new document.
+      summary: Replace a premise
+      tags:
+        - premise
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new premise.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: premisesReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the premise
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the premise with.
+          schema:
+            description: The data to update the premise with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a premise with the request body and
+        returns the updated document.
+      summary: Update a premise
+      tags:
+        - premise
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated premise.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: premisesUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the premise
+          type: string
+          name: key
+          in: path
+      description: Deletes a premise from the database.
+      summary: Remove a premise
+      tags:
+        - premise
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: premisesDelete
+  /assets:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all assets.
+      summary: List all assets
+      tags:
+        - asset
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of assets.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: assetsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The asset to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new asset from the request body and
+        returns the saved document.
+      summary: Create a new asset
+      tags:
+        - asset
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created asset.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The asset already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: assetsCreate
+  '/assets/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the asset
+          type: string
+          name: key
+          in: path
+      description: Retrieves a asset by its key.
+      summary: Fetch a asset
+      tags:
+        - asset
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The asset.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: assetsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the asset
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the asset with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing asset with the request body and
+        returns the new document.
+      summary: Replace a asset
+      tags:
+        - asset
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new asset.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: assetsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the asset
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the asset with.
+          schema:
+            description: The data to update the asset with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a asset with the request body and
+        returns the updated document.
+      summary: Update a asset
+      tags:
+        - asset
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated asset.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: assetsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the asset
+          type: string
+          name: key
+          in: path
+      description: Deletes a asset from the database.
+      summary: Remove a asset
+      tags:
+        - asset
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: assetsDelete
+  /are_in:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all are_inItems.
+      summary: List all are_inItems
+      tags:
+        - are_in
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of are_inItems.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: are_inList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The are_in to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+              _from:
+                type: string
+              _to:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new are_in from the request body and
+        returns the saved document.
+      summary: Create a new are_in
+      tags:
+        - are_in
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created are_in.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The are_in already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: are_inCreate
+  '/are_in/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the are_in
+          type: string
+          name: key
+          in: path
+      description: Retrieves a are_in by its key.
+      summary: Fetch a are_in
+      tags:
+        - are_in
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The are_in.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: are_inDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the are_in
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the are_in with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing are_in with the request body and
+        returns the new document.
+      summary: Replace a are_in
+      tags:
+        - are_in
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new are_in.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: are_inReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the are_in
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the are_in with.
+          schema:
+            description: The data to update the are_in with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a are_in with the request body and
+        returns the updated document.
+      summary: Update a are_in
+      tags:
+        - are_in
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated are_in.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: are_inUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the are_in
+          type: string
+          name: key
+          in: path
+      description: Deletes a are_in from the database.
+      summary: Remove a are_in
+      tags:
+        - are_in
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: are_inDelete
+  /owns:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all owns.
+      summary: List all owns
+      tags:
+        - own
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of owns.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: ownsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The own to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+              _from:
+                type: string
+              _to:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new own from the request body and
+        returns the saved document.
+      summary: Create a new own
+      tags:
+        - own
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created own.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The own already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: ownsCreate
+  '/owns/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the own
+          type: string
+          name: key
+          in: path
+      description: Retrieves a own by its key.
+      summary: Fetch a own
+      tags:
+        - own
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The own.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: ownsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the own
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the own with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing own with the request body and
+        returns the new document.
+      summary: Replace a own
+      tags:
+        - own
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new own.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: ownsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the own
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the own with.
+          schema:
+            description: The data to update the own with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a own with the request body and
+        returns the updated document.
+      summary: Update a own
+      tags:
+        - own
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated own.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: ownsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the own
+          type: string
+          name: key
+          in: path
+      description: Deletes a own from the database.
+      summary: Remove a own
+      tags:
+        - own
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: ownsDelete
+  /creates:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      description: Retrieves a list of all creates.
+      summary: List all creates
+      tags:
+        - create
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: array
+            items:
+              - type: object
+                properties:
+                  _key:
+                    type: string
+                additionalProperties: false
+          description: A list of creates.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: createsList
+    post:
+      produces:
+        - application/json
+      parameters:
+        - required: false
+          description: The create to create.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+              _from:
+                type: string
+              _to:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Creates a new create from the request body and
+        returns the saved document.
+      summary: Create a new create
+      tags:
+        - create
+      consumes:
+        - application/json
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The created create.
+        '409':
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+          description: The create already exists.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: createsCreate
+  '/creates/{key}':
+    get:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the create
+          type: string
+          name: key
+          in: path
+      description: Retrieves a create by its key.
+      summary: Fetch a create
+      tags:
+        - create
+      consumes: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The create.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: createsDetail
+    put:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the create
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to replace the create with.
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Replaces an existing create with the request body and
+        returns the new document.
+      summary: Replace a create
+      tags:
+        - create
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The new create.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: createsReplace
+    patch:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the create
+          type: string
+          name: key
+          in: path
+        - required: false
+          description: The data to update the create with.
+          schema:
+            description: The data to update the create with.
+            type: object
+            properties: {}
+            additionalProperties: false
+          name: body
+          in: body
+      description: |-
+        Patches a create with the request body and
+        returns the updated document.
+      summary: Update a create
+      tags:
+        - create
+      consumes:
+        - application/json
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              _key:
+                type: string
+            additionalProperties: false
+          description: The updated create.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: createsUpdate
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - required: true
+          description: The key of the create
+          type: string
+          name: key
+          in: path
+      description: Deletes a create from the database.
+      summary: Remove a create
+      tags:
+        - create
+      consumes: []
+      responses:
+        '204':
+          description: HTTP 204 No Content.
+        '500':
+          description: Default error response.
+          schema:
+            type: object
+            properties:
+              error:
+                enum:
+                  - true
+                type:
+                  - array
+                  - boolean
+                  - number
+                  - object
+                  - string
+                  - 'null'
+              errorNum:
+                type: integer
+              errorMessage:
+                type: string
+              code:
+                type: integer
+            additionalProperties: false
+            required:
+              - error
+      operationId: createsDelete
+info:
+  title: awsecurity
+  description: American Water Security Project
+  version: 0.0.0
+  license:
+    name: GPL

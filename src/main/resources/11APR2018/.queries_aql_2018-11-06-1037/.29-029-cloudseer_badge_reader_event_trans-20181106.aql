@@ -1,0 +1,19 @@
+db._query(`FOR l in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR m in 1..12
+LET badgeInfo = l.event.BadgeId
+FILTER l.hour == h AND l.day == d AND l.month == m
+COLLECT hour = l.hour, day = l.day, month = l.month, panel = l.event.Panel, peoples=(
+        FOR p in cloudseer_peoples
+        FILTER p.badgeId == TO_NUMBER(badgeInfo) AND LENGTH(p.activities.badge) != 0 AND p.activities.badge.session.place == panel
+        RETURN p._id
+        )
+INSERT {
+    panel: panel,
+    hour : hour,
+    day: day,
+    month : month,
+    count: length(peoples),
+    peoples: peoples
+} INTO cloudseer_badge_reader_event_trans`).getExtra()

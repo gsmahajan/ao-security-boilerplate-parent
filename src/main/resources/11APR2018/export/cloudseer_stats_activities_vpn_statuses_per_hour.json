@@ -1,0 +1,6 @@
+[
+  {"_id":"cloudseer_stats_activities_vpn_statuses_per_hour/6689683","_key":"6689683","_rev":"_XscANui--D","activities":{"hour":22,"size":427,"type":"Authentication succeeded"}},
+  {"_id":"cloudseer_stats_activities_vpn_statuses_per_hour/6689685","_key":"6689685","_rev":"_XscANui--F","activities":{"hour":23,"size":304,"type":"Authentication succeeded"}},
+  {"_id":"cloudseer_stats_activities_vpn_statuses_per_hour/6689681","_key":"6689681","_rev":"_XscANui--B","activities":{"hour":21,"size":594,"type":"Authentication succeeded"}},
+  {"_id":"cloudseer_stats_activities_vpn_statuses_per_hour/6689677","_key":"6689677","_rev":"_XscANui--_","activities":{"hour":20,"size":673,"type":"Authentication succeeded"}}
+]

@@ -1,0 +1,54 @@
+db._query(`FOR v in cloudseer_source_myaccess
+LET identity = v.sAMAccountName
+COLLECT logon = v.sAMAccountName, empId = v.employeeID, empNum = v.employeeNumber, emailAddress = v.mail, since = v.whenCreated, manager = SUBSTITUTE(SPLIT(v.manager, ",")[0], "CN=", ""), under = SUBSTITUTE(SPLIT(v.manager, ",")[1], "OU=", ""), firstName = SPLIT(v.mail, ".")[0], cinfo = [v.mobile, v.telephoneNumber], fullName = v.name, csId = MD5(v.logon), badgeMapping = (
+        FOR b in cloudseer_source_badges_users_mappings
+        FILTER UPPER(identity) == UPPER(b.UserID)
+        RETURN b
+    ), vpnInformation  = (
+        FOR g IN cloudseer_source_vpns
+        FILTER UPPER(identity) == UPPER(g.Identity)
+        LET mac = g.Endpoint_ID
+        COLLECT macd = g.Endpoint_ID, dev = g.Endpoint_Profile, 
+        sessions = (FOR q in cloudseer_source_vpns FILTER UPPER(q.Endpoint_ID) == UPPER(mac) RETURN q._id) 
+        WITH count INTO length
+        RETURN DISTINCT { rank: 0, mac: macd, dev: dev, size: length, session: sessions }
+    ), vpnTimedInformation  = (
+        FOR r IN cloudseer_vpn_timebuckets
+        FILTER UPPER(identity) == UPPER(r.event.Identity)
+        LET mac = r.event.Endpoint_ID
+        COLLECT macd = r.event.Endpoint_ID, dev = r.event.Endpoint_Profile, 
+        sessions = (FOR q in cloudseer_vpn_timebuckets FILTER UPPER(q.event.Endpoint_ID) == UPPER(mac) RETURN DISTINCT q._id) 
+        WITH count INTO length
+        RETURN DISTINCT { rank: 0, mac: macd, dev: dev, size: length, session: sessions }
+    )
+INSERT {
+    csId: csId,
+    logon : logon,
+    empId : empId,
+    empNum : empNum,
+    emailAddress: emailAddress,
+    since: since,
+    reports_to: manager,
+    fall_under: under,
+    firstName: firstName,
+    lastName: badgeMapping[0].Surname,
+    displayName: fullName,
+    laptops: (FOR mac in vpnInformation[*].mac FOR lp in cloudseer_laptops FILTER lp.mac == mac RETURN DISTINCT lp._id),
+    badgeId: badgeMapping[0].BadgeId,
+    contactInformation: {
+        mobile: cinfo[0],
+        telephone: cinfo[1]
+    },
+    activities:{
+        vpn: vpnTimedInformation,
+        badge:  (
+            FOR bg IN cloudseer_time_buckets
+            FILTER TO_NUMBER(bg.event.BadgeId) == badgeMapping[0].BadgeId
+            COLLECT place = bg.event.Panel, links = (FOR e in cloudseer_time_buckets FILTER e.event.BadgeId == bg.event.BadgeId AND e.event.Panel == bg.event.Panel RETURN e._id) WITH count into total_badges
+            RETURN {
+		    place: place,
+		    size: total_badges,
+		    links: links
+	    })
+    }
+} INTO cloudseer_peoples`).getExtra()

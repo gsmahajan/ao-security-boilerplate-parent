@@ -1,0 +1,150 @@
+Plugin,Plugin Name,Family,Severity,IP Address,Protocol,Port,Exploit?,MAC Address,DNS Name,NetBIOS Name,Plugin Text,Synopsis,Description,Solution,See Also,Risk Factor,STIG Severity,CVSS Base Score,CVSS Temporal Score,CVSS Vector,CPE,CVE,BID,Cross References,First Discovered,Last Observed,Vuln Publication Date,Patch Publication Date,Plugin Publication Date,Plugin Modification Date,Exploit Ease,Exploit Frameworks,Check Type,Version
+103686,RHEL 6 : postgresql (RHSA-2017:2860),Red Hat Local Security Checks,High,10.1.9.29,TCP,0,Yes,00:50:56:86:52:0c,hsyplupts001,,"Plugin Output: 
+Remote package installed : postgresql-libs-8.4.20-7.el6
+Should be                : postgresql-libs-8.4.20-8.el6_9
+
+NOTE: The vulnerability information above was derived by checking the
+package versions of the affected packages from this advisory. This
+scan is unable to rely on Red Hat's own security checks, which
+consider channels and products in their vulnerability determinations.",The remote Red Hat host is missing one or more security updates.,"An update for postgresql is now available for Red Hat Enterprise Linux 6.
+
+Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+PostgreSQL is an advanced object-relational database management system (DBMS).
+
+Security Fix(es) :
+
+* It was found that authenticating to a PostgreSQL database account with an empty password was possible despite libpq's refusal to send an empty password. A remote attacker could potentially use this flaw to gain access to database accounts with empty passwords. (CVE-2017-7546)
+
+Red Hat would like to thank the PostgreSQL project for reporting this issue. Upstream acknowledges Ben de Graaff, Jelte Fennema, and Jeroen van der Ham as the original reporters.",Update the affected packages.,"https://www.postgresql.org/about/news/1772/
+http://rhn.redhat.com/errata/RHSA-2017-2860.html
+https://www.redhat.com/security/data/cve/CVE-2017-7546.html",High,I,7.5,6.2,AV:N/AC:L/Au:N/C:P/I:P/A:P/E:F/RL:OF/RC:ND,"p-cpe:/a:redhat:enterprise_linux:postgresql
+p-cpe:/a:redhat:enterprise_linux:postgresql-contrib
+p-cpe:/a:redhat:enterprise_linux:postgresql-debuginfo
+p-cpe:/a:redhat:enterprise_linux:postgresql-devel
+p-cpe:/a:redhat:enterprise_linux:postgresql-docs
+p-cpe:/a:redhat:enterprise_linux:postgresql-libs
+p-cpe:/a:redhat:enterprise_linux:postgresql-plperl
+p-cpe:/a:redhat:enterprise_linux:postgresql-plpython
+p-cpe:/a:redhat:enterprise_linux:postgresql-pltcl
+p-cpe:/a:redhat:enterprise_linux:postgresql-server
+p-cpe:/a:redhat:enterprise_linux:postgresql-test
+cpe:/o:redhat:enterprise_linux:6",CVE-2017-7546,,"OSVDB #163076,RHSA #2017,IAVB #2017-B-0107","Nov 30, 2017 11:27:46 EST","Nov 30, 2017 11:27:46 EST",N/A,"Oct 5, 2017 12:00:00 EDT","Oct 6, 2017 12:00:00 EDT","Oct 9, 2017 12:00:00 EDT",Exploits are available,,local,Revision: 2.3
+104566,RHEL 6 : kernel (RHSA-2017:3200),Red Hat Local Security Checks,High,10.1.9.29,TCP,0,Yes,00:50:56:86:52:0c,hsyplupts001,,"Plugin Output: 
+Remote package installed : kernel-2.6.32-696.10.3.el6
+Should be                : kernel-2.6.32-696.16.1.el6
+
+Remote package installed : kernel-firmware-2.6.32-696.10.3.el6
+Should be                : kernel-firmware-2.6.32-696.16.1.el6
+
+Remote package installed : kernel-headers-2.6.32-696.10.3.el6
+Should be                : kernel-headers-2.6.32-696.16.1.el6
+
+NOTE: The vulnerability information above was derived by checking the
+package versions of the affected packages from this advisory. This
+scan is unable to rely on Red Hat's own security checks, which
+consider channels and products in their vulnerability determinations.",The remote Red Hat host is missing one or more security updates.,"An update for kernel is now available for Red Hat Enterprise Linux 6.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The kernel packages contain the Linux kernel, the core of any Linux operating system.
+
+Security Fix(es) :
+
+* A race condition issue leading to a use-after-free flaw was found in the way the raw packet sockets are implemented in the Linux kernel networking subsystem handling synchronization. A local user able to open a raw packet socket (requires the CAP_NET_RAW capability) could use this flaw to elevate their privileges on the system.
+(CVE-2017-1000111, Important)
+
+* An exploitable memory corruption flaw was found in the Linux kernel.
+The append path can be erroneously switched from UFO to non-UFO in ip_ufo_append_data() when building an UFO packet with MSG_MORE option.
+If unprivileged user namespaces are available, this flaw can be exploited to gain root privileges. (CVE-2017-1000112, Important)
+
+* A divide-by-zero vulnerability was found in the __tcp_select_window function in the Linux kernel. This can result in a kernel panic causing a local denial of service. (CVE-2017-14106, Moderate)
+
+Red Hat would like to thank Willem de Bruijn for reporting CVE-2017-1000111 and Andrey Konovalov for reporting CVE-2017-1000112.
+
+Bug Fix(es) :
+
+* When the operating system was booted with Red Hat Enterprise Virtualization, and the eh_deadline sysfs parameter was set to 10s, the Storage Area Network (SAN) issues caused eh_deadline to trigger with no handler. Consequently, a kernel panic occurred. This update fixes the lpfc driver, thus preventing the kernel panic under described circumstances. (BZ #1487220)
+
+* When an NFS server returned the NFS4ERR_BAD_SEQID error to an OPEN request, the open-owner was removed from the state_owners rbtree.
+Consequently, NFS4 client infinite loop that required a reboot to recover occurred. This update changes NFS4ERR_BAD_SEQID handling to leave the open-owner in the state_owners rbtree by updating the create_time parameter so that it looks like a new open-owner. As a result, an NFS4 client is now able to recover without falling into the infinite recovery loop after receiving NFS4ERR_BAD_SEQID. (BZ#1491123)
+
+* If an NFS client attempted to mount NFSv3 shares from an NFS server exported directly to the client's IP address, and this NFS client had already mounted other shares that originated from the same server but were exported to the subnetwork which this client was part of, the auth.unix.ip cache expiration was not handled correctly. Consequently, the client received the 'stale file handle' errors when trying to mount the share. This update fixes handling of the cache expiration, and the NFSv3 shares now mount as expected without producing the 'stale file handle' errors. (BZ #1497976)
+
+* When running a script that raised the tx ring count to its maximum value supported by the Solarflare Network Interface Controller (NIC) driver, the EF10 family NICs allowed the settings exceeding the hardware's capability. Consequently, the Solarflare hardware became unusable with Red Hat Entepripse Linux 6. This update fixes the sfc driver, so that the tx ring can have maximum 2048 entries for all EF10 NICs. As a result, the Solarflare hardware no longer becomes unusable with Red Hat Entepripse Linux 6 due to this bug. (BZ#1498019)",Update the affected packages.,"http://rhn.redhat.com/errata/RHSA-2017-3200.html
+https://www.redhat.com/security/data/cve/CVE-2017-14106.html
+https://www.redhat.com/security/data/cve/CVE-2017-1000111.html
+https://www.redhat.com/security/data/cve/CVE-2017-1000112.html",High,,7.2,,AV:L/AC:L/Au:N/C:C/I:C/A:C,"p-cpe:/a:redhat:enterprise_linux:kernel
+p-cpe:/a:redhat:enterprise_linux:kernel-abi-whitelists
+p-cpe:/a:redhat:enterprise_linux:kernel-debug
+p-cpe:/a:redhat:enterprise_linux:kernel-debug-debuginfo
+p-cpe:/a:redhat:enterprise_linux:kernel-debug-devel
+p-cpe:/a:redhat:enterprise_linux:kernel-debuginfo
+p-cpe:/a:redhat:enterprise_linux:kernel-debuginfo-common-i686
+p-cpe:/a:redhat:enterprise_linux:kernel-debuginfo-common-s390x
+p-cpe:/a:redhat:enterprise_linux:kernel-debuginfo-common-x86_64
+p-cpe:/a:redhat:enterprise_linux:kernel-devel
+p-cpe:/a:redhat:enterprise_linux:kernel-doc
+p-cpe:/a:redhat:enterprise_linux:kernel-firmware
+p-cpe:/a:redhat:enterprise_linux:kernel-headers
+p-cpe:/a:redhat:enterprise_linux:kernel-kdump
+p-cpe:/a:redhat:enterprise_linux:kernel-kdump-debuginfo
+p-cpe:/a:redhat:enterprise_linux:kernel-kdump-devel
+p-cpe:/a:redhat:enterprise_linux:perf
+p-cpe:/a:redhat:enterprise_linux:perf-debuginfo
+p-cpe:/a:redhat:enterprise_linux:python-perf
+p-cpe:/a:redhat:enterprise_linux:python-perf-debuginfo
+cpe:/o:redhat:enterprise_linux:6","CVE-2017-1000111,CVE-2017-1000112,CVE-2017-14106",,RHSA #2017,"Nov 30, 2017 11:27:46 EST","Nov 30, 2017 11:27:46 EST",N/A,"Nov 14, 2017 12:00:00 EST","Nov 15, 2017 12:00:00 EST","Nov 15, 2017 12:00:00 EST",Exploits are available,Core Impact,local,Revision: 3.1
+14657,Red Hat Update Level,Red Hat Local Security Checks,Critical,10.1.9.32,TCP,0,No,00:50:56:bc:1e:e8,hsyplnocs001,,"Plugin Output: 
+  Installed version : 7.1
+  Latest version    : 7.4",The remote Red Hat server is out-of-date.,"The remote Red Hat server is missing the latest bugfix update package.
+As a result, it is likely to contain multiple security vulnerabilities.",Apply the latest update.,"https://access.redhat.com/articles/3078
+https://rhn.redhat.com/errata",Critical,,10,,AV:N/AC:L/Au:N/C:C/I:C/A:C,"cpe:/o:redhat:linux
+cpe:/o:redhat:enterprise_linux",,,,"Nov 30, 2017 11:27:46 EST","Nov 30, 2017 11:27:46 EST",N/A,N/A,"Sep 3, 2004 12:00:00 EDT","Aug 14, 2017 12:00:00 EDT",,,local,Revision: 1.32
+84258,RHEL 6 / 7 : cups (RHSA-2015:1123),Red Hat Local Security Checks,Critical,10.1.9.32,TCP,0,Yes,00:50:56:bc:1e:e8,hsyplnocs001,,"Plugin Output: 
+Remote package installed : cups-1.6.3-17.el7
+Should be                : cups-1.6.3-17.el7_1.1
+
+Remote package installed : cups-client-1.6.3-17.el7
+Should be                : cups-client-1.6.3-17.el7_1.1
+
+Remote package installed : cups-filesystem-1.6.3-17.el7
+Should be                : cups-filesystem-1.6.3-17.el7_1.1
+
+Remote package installed : cups-libs-1.6.3-17.el7
+Should be                : cups-libs-1.6.3-17.el7_1.1
+
+NOTE: The vulnerability information above was derived by checking the
+package versions of the affected packages from this advisory. This
+scan is unable to rely on Red Hat's own security checks, which
+consider channels and products in their vulnerability determinations.",The remote Red Hat host is missing one or more security updates.,"Updated cups packages that fix multiple security issues are now available for Red Hat Enterprise Linux 6 and 7.
+
+Red Hat Product Security has rated this update as having Important security impact. Common Vulnerability Scoring System (CVSS) base scores, which give detailed severity ratings, are available for each vulnerability from the CVE links in the References section.
+
+CUPS provides a portable printing layer for Linux, UNIX, and similar operating systems.
+
+A string reference count bug was found in cupsd, causing premature freeing of string objects. An attacker can submit a malicious print job that exploits this flaw to dismantle ACLs protecting privileged operations, allowing a replacement configuration file to be uploaded which in turn allows the attacker to run arbitrary code in the CUPS server (CVE-2015-1158)
+
+A cross-site scripting flaw was found in the cups web templating engine. An attacker could use this flaw to bypass the default configuration settings that bind the CUPS scheduler to the 'localhost' or loopback interface. (CVE-2015-1159)
+
+An integer overflow leading to a heap-based buffer overflow was found in the way cups handled compressed raster image files. An attacker could create a specially crafted image file, which when passed via the cups Raster filter, could cause the cups filter to crash.
+(CVE-2014-9679)
+
+Red Hat would like to thank the CERT/CC for reporting CVE-2015-1158 and CVE-2015-1159 issues.
+
+All cups users are advised to upgrade to these updated packages, which contain backported patches to correct these issues. After installing this update, the cupsd daemon will be restarted automatically.",Update the affected packages.,"https://www.redhat.com/security/data/cve/CVE-2014-9679.html
+https://www.redhat.com/security/data/cve/CVE-2015-1158.html
+https://www.redhat.com/security/data/cve/CVE-2015-1159.html
+http://rhn.redhat.com/errata/RHSA-2015-1123.html",Critical,,10,8.3,AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:ND,"p-cpe:/a:redhat:enterprise_linux:cups
+p-cpe:/a:redhat:enterprise_linux:cups-client
+p-cpe:/a:redhat:enterprise_linux:cups-debuginfo
+p-cpe:/a:redhat:enterprise_linux:cups-devel
+p-cpe:/a:redhat:enterprise_linux:cups-filesystem
+p-cpe:/a:redhat:enterprise_linux:cups-ipptool
+p-cpe:/a:redhat:enterprise_linux:cups-libs
+p-cpe:/a:redhat:enterprise_linux:cups-lpd
+p-cpe:/a:redhat:enterprise_linux:cups-php
+cpe:/o:redhat:enterprise_linux:6
+cpe:/o:redhat:enterprise_linux:6.6
+cpe:/o:redhat:enterprise_linux:7
+cpe:/o:redhat:enterprise_linux:7.1","CVE-2014-9679,CVE-2015-1158,CVE-2015-1159","725,947,509,875,106","OSVDB #118237,OSVDB #123116,OSVDB #123117,RHSA #2015","Nov 30, 2017 11:27:46 EST","Nov 30, 2017 11:27:46 EST",N/A,"Jun 17, 2015 12:00:00 EDT","Jun 18, 2015 12:00:00 EDT","Jan 6, 2017 12:00:00 EST",Exploits are available,,local,Revision: 2.9

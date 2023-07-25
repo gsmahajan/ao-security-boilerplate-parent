@@ -1,0 +1,6 @@
+db._query(`FOR l in cloudseer_source_lenels
+COLLECT Event = l.Event WITH count into length
+INSERT {
+    type: Event,
+    occurances: length
+} INTO cloudseer_lenel_statuses`).getExtra()

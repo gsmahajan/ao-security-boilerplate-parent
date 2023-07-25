@@ -1,0 +1,14 @@
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in cloudseer_lenel_statuses
+FOR ed IN [ "Entry", "Exit", "IN", "OUT"]
+	FILTER j.hour == h AND j.event.Event == ev.type AND CONTAINS(j.event.Device, ed)
+	COLLECT  event = j.event.Event, hour = j.hour, bucket = j.bucket, badgeActivity = ed WITH count into length
+	INSERT { "activities" : {
+	    type: event,
+	    hour: hour,
+	    bucket: bucket,
+	    badge_activity: badgeActivity,
+		size: length
+	}
+	} INTO cloudseer_badging_entry_exit_stats_hourly`).getExtra()

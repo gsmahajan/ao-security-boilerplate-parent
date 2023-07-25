@@ -1,0 +1,1 @@
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_alltime_badgecount: (FOR q in cloudseer_time_buckets RETURN DISTINCT LENGTH (cloudseer_time_buckets))[0]} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()

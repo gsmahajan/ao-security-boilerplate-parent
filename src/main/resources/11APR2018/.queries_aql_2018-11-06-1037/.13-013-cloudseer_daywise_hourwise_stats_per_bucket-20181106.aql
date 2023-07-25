@@ -1,0 +1,15 @@
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR m in 1..12
+	FILTER j.hour == h AND d == j.day AND h == j.hour AND m == j.month
+	COLLECT  event = j.event.Event, hour = j.hour, bucket = j.bucket, dw = j.day, dm = j.month WITH count into length
+	INSERT { "activities" : {
+	    type: event,
+	    day: dw,
+	    hour: hour,
+	    month: dm,
+	    bucket: bucket,
+	    size: length
+	}
+} INTO cloudseer_daywise_hourwise_stats_per_bucket`).getExtra()

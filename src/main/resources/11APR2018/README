@@ -1,0 +1,10 @@
+ARANGODB - UP & RUNNING DATA PROVIDED IN 5 SOURCES
+
+
+./ingesh.sh >> ingesh.log 2>&1 &
+
+
+tail -f ingest.log
+
+
+CREDIT - Girish Mahajan @ Accion Labs.com

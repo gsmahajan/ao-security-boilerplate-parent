@@ -1,0 +1,7 @@
+[
+  {"_id":"cloudseer_badging_activities_per_status_pattern_stats_daily/6654282","_key":"6654282","_rev":"_Xsbyj4G--H","activities":{"size":65,"type":"Invalid Badge"}},
+  {"_id":"cloudseer_badging_activities_per_status_pattern_stats_daily/6654272","_key":"6654272","_rev":"_Xsbyj4G--_","activities":{"size":29467,"type":"Access Granted"}},
+  {"_id":"cloudseer_badging_activities_per_status_pattern_stats_daily/6654280","_key":"6654280","_rev":"_Xsbyj4G--F","activities":{"size":55,"type":"Invalid Access Level"}},
+  {"_id":"cloudseer_badging_activities_per_status_pattern_stats_daily/6654278","_key":"6654278","_rev":"_Xsbyj4G--D","activities":{"size":5,"type":"Inactive Badge"}},
+  {"_id":"cloudseer_badging_activities_per_status_pattern_stats_daily/6654276","_key":"6654276","_rev":"_Xsbyj4G--B","activities":{"size":31,"type":"Denied, Badge Not in Panel"}}
+]

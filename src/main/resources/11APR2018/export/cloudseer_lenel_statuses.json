@@ -1,0 +1,7 @@
+[
+  {"_id":"cloudseer_lenel_statuses/6654173","_key":"6654173","_rev":"_Xsbx1T2--H","occurances":65,"type":"Invalid Badge"},
+  {"_id":"cloudseer_lenel_statuses/6654167","_key":"6654167","_rev":"_Xsbx1T2--B","occurances":31,"type":"Denied, Badge Not in Panel"},
+  {"_id":"cloudseer_lenel_statuses/6654169","_key":"6654169","_rev":"_Xsbx1T2--D","occurances":5,"type":"Inactive Badge"},
+  {"_id":"cloudseer_lenel_statuses/6654171","_key":"6654171","_rev":"_Xsbx1T2--F","occurances":55,"type":"Invalid Access Level"},
+  {"_id":"cloudseer_lenel_statuses/6654163","_key":"6654163","_rev":"_Xsbx1T2--_","occurances":29467,"type":"Access Granted"}
+]

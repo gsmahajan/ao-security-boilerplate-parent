@@ -1,0 +1,121 @@
+################################################
+#Hashes - Scripts provided by Sanjay - 22nd Feb#
+################################################
+$hashes = @()
+$MD5Hashes = @()
+$SHA1Hashes = @()
+$SHA256Hashes = @()
+
+#Extracts all hashes of CISCP polls
+gci "C:\Users\RH0161\Desktop\siem scripting\CISCP polling" | %{
+	[xml]$xml = gc $_.fullname
+	$hashes += $xml.STIX_Package.Indicators.Indicator.observable.object.properties.hashes.hash.simple_hash_value.'#text'
+}
+
+#Filters the list of hashes to be added to the Malware Hashes Watchlist 
+foreach($hash in $hashes)
+{
+	if($hash.length -eq 32) #filters for MD5 hashes
+	{		
+		$MD5Hashes += $hash
+	}
+	elseif($hash.length -eq 40) #filters for SHA1 hashes 
+	{
+		$SHA1Hashes += $hash
+	}
+	elseif($hash.length -eq 64) #filters for SHA256 hashes
+	{
+		$SHA256Hashes += $hash
+	}
+}
+
+######
+#URLS#
+######	
+$URLs = @()
+#Extracts URLs of CISCP polls
+gci "C:\Users\RH0161\Desktop\siem scripting\CISCP polling" | %{
+	[xml]$xml = gc $_.fullname
+	$URLs += $xml.STIX_Package.Indicators.Indicator.observable.object.properties.value.'#text'
+}
+#Removes empty lines
+$URLs = $URLs | ?{$_ -ne $null}
+
+##################
+#Create JSON Body#
+##################
+$hashBody = @()
+#Web session body for MD5 Hashes Watchlist
+$hashBody += convertto-json @{
+	watchlist = @{
+		value = 15 #WATCHLIST ID: MALICIOUS MD5 HASHES
+	}
+	values = @($MD5Hashes)
+}
+
+#Web session body for SHA1 Hashes Watchlist
+$hashBody += convertto-json @{
+	watchlist = @{
+		value = 67 #WATCHLIST ID: MALICIOUS SHA1 HASHES
+	}
+	values = @($SHA1Hashes)
+}
+
+#Web session body for SHA256 Hashes Watchlist
+$hashBody += convertto-json @{
+	watchlist = @{
+		value = 68 #WATCHLIST ID: MALICIOUS SHA256 HASHES
+	}
+	values = @($SHA256Hashes)
+}
+
+#Web session body for CISCP URLs Watchlist
+$URLBody = convertto-json @{
+	watchlist = @{
+		value = 66 #WATCHLIST ID: CISCP URLs
+	}
+	values = @($URLs)
+}
+
+#######
+#Login#
+#######
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$esmhost = 'https://siem.amwater.net/rs/esm/'
+# $credentials = get-credential
+$username = "MAHAJAG"
+$gsmpassword = "Water123"
+
+$v10_b64_user = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($username))
+$v10_b64_passwd = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(($gsmpassword)))
+
+$v10_params = @{
+        username = $v10_b64_user
+        password = $v10_b64_passwd
+        locale = 'en_US'
+        os = 'Win32'
+}        
+$body = $v10_params | ConvertTo-Json
+
+$headers = @{
+    'Content-Type' = 'application/json'
+}
+
+$login_headers = $headers
+$login_headers.Add("Authorization", "Basic "+[System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($username+":"+($credentials.getnetworkcredential().password))))
+$response = Invoke-WebRequest ($esmhost + 'login') -Method Post -Headers $login_headers -Body $body -SessionVariable Cookie
+
+$headers.Add('X-Xsrf-Token', $response.headers.Get_Item('Xsrf-Token'))
+
+###################
+#Add To Watchlists#
+###################
+
+#Add Hashes
+foreach($jsonBody in $hashBody)
+{
+	Invoke-WebRequest ($esmhost + 'sysAddWatchlistValues') -Method Post -Headers $headers -body $jsonBody -WebSession $cookie
+}
+
+#Add URLs
+Invoke-WebRequest ($esmhost + 'sysAddWatchlistValues') -Method Post -Headers $headers -body $URLBody -WebSession $cookie

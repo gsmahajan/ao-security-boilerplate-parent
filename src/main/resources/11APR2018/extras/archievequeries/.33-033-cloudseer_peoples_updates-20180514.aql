@@ -1,0 +1,1 @@
+db._query(`FOR person in cloudseer_peoples UPDATE person WITH { global_badgecount_by_hour: (FOR n in 0..23 FOR q in cloudseer_time_buckets FILTER n == q.hour COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()

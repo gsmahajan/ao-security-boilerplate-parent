@@ -1,0 +1,23 @@
+db._query(`FOR j in cloudseer_source_vpns
+COLLECT aj = j, hour = DATE_HOUR(j.Logged_At), dw =DATE_DAY(j.Logged_At), time = j.Logged_At, dm = DATE_MONTH(j.Logged_At), wk = DATE_DAYOFWEEK(j.Logged_At), wkd = DATE_FORMAT(j.Logged_At, "%www"),wn = DATE_ISOWEEK(j.Logged_At) WITH COUNT INTO groups
+INSERT {
+    time: time,
+    hour : hour,
+    day: dw,
+    week: wk,
+    week_number: wn,
+    weekday: wkd,
+    month: dm,
+    bucket: (
+        FOR v in 1..1
+        COLLECT a = hour <= 4 ? 1: 0, b = hour > 4 && hour <=8 ? 1: 0, c = hour > 8 && hour <=12 ? 1: 0, d = hour > 12 && hour <=16 ? 1: 0, e = hour > 16 && hour <=20 ? 1 : 0, f = hour > 20 && hour <= 24 ? 1:0
+        RETURN {
+            a,
+            b,
+            c,
+            d,
+            e,
+            f
+        }
+    ), event: aj
+} INTO cloudseer_vpn_timebuckets`).getExtra()

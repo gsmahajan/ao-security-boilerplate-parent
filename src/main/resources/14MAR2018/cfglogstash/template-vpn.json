@@ -1,0 +1,232 @@
+{
+  "template": "awsecurity_vpn",
+  "version": 1,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "Account_Authentication": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Account_Session_Id": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Account_Session_Time": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Account_Status_Type": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Account_Terminatecause": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Audit_Session_Id": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Badgeid": {
+          "type": "long"
+        },
+        "Concat": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Date": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Device_Port": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Display": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Endpoint_Id": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Endpoint_Ip_Address": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "First": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Identity": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Iiq_Id": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Last": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Network_Device_Ip": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Network_Device_Name": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Received_At": {
+          "type": "date"
+        },
+        "Server": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Time": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Upn": {
+          "type": "long"
+        },
+        "Userid": {
+          "type": "text",
+          "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+  }
+}

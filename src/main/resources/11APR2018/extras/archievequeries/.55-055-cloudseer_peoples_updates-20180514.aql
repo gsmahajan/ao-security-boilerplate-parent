@@ -1,0 +1,1 @@
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { lanes: (FOR l in (FOR q in person.activities.badge[*].links FOR g in DOCUMENT(q) COLLECT lane = g.event.Device with count into length RETURN { lane:lane, count:length }) SORT l.count DESC,  l.lane RETURN l) } INTO cloudseer_peoples`).getExtra()

@@ -1,0 +1,3 @@
+db._query(`FOR h in 0..23
+COLLECT hourgroup = h, names = (FOR q in cloudseer_time_buckets FILTER q.hour == h COLLECT names = q.event.Details INTO groups RETURN DISTINCT UNIQUE(groups[*].q.event.Details))
+INSERT {hourgroup: hourgroup, persons: UNIQUE(names)} INTO cloudseer_alltime_hourwise_total_persons`).getExtra()

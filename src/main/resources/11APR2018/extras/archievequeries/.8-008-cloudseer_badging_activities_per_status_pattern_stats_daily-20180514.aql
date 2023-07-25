@@ -1,0 +1,10 @@
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in cloudseer_lenel_statuses
+	FILTER j.hour == h AND j.event.Event == ev.type
+	COLLECT  event = j.event.Event WITH count into length
+	INSERT { "activities" : {
+	    type: event,
+		size: length
+	}
+	} INTO cloudseer_badging_activities_per_status_pattern_stats_daily`).getExtra()

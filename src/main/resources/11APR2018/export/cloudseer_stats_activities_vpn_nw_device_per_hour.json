@@ -1,0 +1,14 @@
+[
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689757","_key":"6689757","_rev":"_XscA822--F","activities":{"device":"haddon-dc-nj-vpn01","hour":23,"size":9}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689771","_key":"6689771","_rev":"_XscA822--T","activities":{"device":"hershey-dc-pa-vpn02","hour":22,"size":199}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689769","_key":"6689769","_rev":"_XscA822--R","activities":{"device":"hershey-dc-pa-vpn02","hour":21,"size":315}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689763","_key":"6689763","_rev":"_XscA822--L","activities":{"device":"hershey-dc-pa-vpn01","hour":22,"size":215}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689761","_key":"6689761","_rev":"_XscA822--J","activities":{"device":"hershey-dc-pa-vpn01","hour":21,"size":263}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689765","_key":"6689765","_rev":"_XscA822--N","activities":{"device":"hershey-dc-pa-vpn01","hour":23,"size":126}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689767","_key":"6689767","_rev":"_XscA822--P","activities":{"device":"hershey-dc-pa-vpn02","hour":20,"size":387}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689759","_key":"6689759","_rev":"_XscA822--H","activities":{"device":"hershey-dc-pa-vpn01","hour":20,"size":278}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689753","_key":"6689753","_rev":"_XscA822--B","activities":{"device":"haddon-dc-nj-vpn01","hour":21,"size":16}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689755","_key":"6689755","_rev":"_XscA822--D","activities":{"device":"haddon-dc-nj-vpn01","hour":22,"size":13}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689773","_key":"6689773","_rev":"_XscA822--V","activities":{"device":"hershey-dc-pa-vpn02","hour":23,"size":169}},
+  {"_id":"cloudseer_stats_activities_vpn_nw_device_per_hour/6689749","_key":"6689749","_rev":"_XscA822--_","activities":{"device":"haddon-dc-nj-vpn01","hour":20,"size":8}}
+]

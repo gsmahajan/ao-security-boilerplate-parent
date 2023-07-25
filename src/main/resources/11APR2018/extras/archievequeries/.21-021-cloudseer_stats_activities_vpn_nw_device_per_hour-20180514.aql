@@ -1,0 +1,10 @@
+db._query(`FOR j in cloudseer_vpn_timebuckets
+FOR h in 0..23
+FILTER  j.hour == h
+COLLECT device = j.event.Network_Device, hour = j.hour WITH count INTO length
+INSERT  { "activities":{
+    device: device,
+    hour: hour,
+    size: length
+}
+} INTO cloudseer_stats_activities_vpn_nw_device_per_hour`).getExtra()

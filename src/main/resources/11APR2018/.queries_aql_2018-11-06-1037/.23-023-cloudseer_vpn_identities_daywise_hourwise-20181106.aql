@@ -1,0 +1,4 @@
+db._query(`FOR q in cloudseer_identity_extractions
+FOR r in q.badgesize
+COLLECT name = q.name, id = q.userId, csId = q.csId, badge = q.badge, hour = r.hour, day = r.day, month = r.month, count = r.badgesize
+INSERT {name, id, csId, badge, hour, day, month, count} INTO cloudseer_vpn_identities_daywise_hourwise`).getExtra()

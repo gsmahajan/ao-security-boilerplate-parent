@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)foo -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="img/favicon.ico" sizes="16x16" type="image/png">
+  <title>Security User Profile</title>
+  
+  <link rel="stylesheet prefetch" href="bootstrap.min.css">
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet prefetch" href="app.css">
+  <script src="./jquery.min.js.download"></script>
+  <script src="./bootstrap.min.js.download"></script>
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src='app.js'></script>
+</head>
+
+<body translate="no" background="img/modern-robot-shield-security2.jpg">
+
+  <div class="wrapper">
+    <form class="form-signin">
+	  <div>
+		<img src="img/amwater_logo.png"/>
+		<img src="img/tiny-robot.jpg" style="margin-left:188px; margin-top: -70px; "></img>
+	  </div>
+	  <h2 class="form-signin-heading" style="margin-top:-40px; color: cadetblue;">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" ></input>
+	  <p/>
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+		<p/>
+	   <div class="g-recaptcha" data-sitekey="6LdqRlYUAAAAADjA6Tc0zh9i3i6SRaEQxdTxpT_M"></div>
+		<p/>		<p/>
+		<label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" id="mybutton" type="submit" onclick="javascript:showProfile();">Login</button>
+    </form>
+  </div>
+
+ <div class="user_wrapper">
+	  <div class="heading_wrapper">
+	  <div class="search-control" style="align:center;margin-top: 
+		10px;width: 406px;margin-bottom: 25px;margin-left: 120px;height: 64px;"> 
+	    <form class="search-form">
+		<label>Enter User Key:</label><input id="search_text_input" 
+		name="search_text_input" type="text"> <button class="btn btn-primary" 
+		type="search" onclick="javascript:searchUser();">Search</button> 
+		</form></div>
+	  </div>
+
+  <div id="user-profile-2" class="user-profile">
+		<div class="tabbable">
+			<ul class="nav nav-tabs padding-18">
+				<li class="active">
+					<a data-toggle="tab" href="foo#home">
+						<i class="green ace-icon fa fa-user bigger-120"></i>
+						Profile
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="foo#feed">
+						<i class="orange ace-icon fa fa-rss bigger-120"></i>
+						Activity Feed
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="pink ace-icon fa fa-laptop bigger-120"></i>
+						Laptop / Desktop
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="foo#friends">
+						<i class="blue ace-icon fa fa-users bigger-120"></i>
+						Team
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="red ace-icon fa fa-bar-chart bigger-120"></i>
+						Trends
+					</a>
+				</li>
+
+
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="pink ace-icon fa fa-cloud bigger-120"></i>
+						VPN
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="red2 ace-icon fa fa-building-o bigger-120"></i>
+						Badges
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="blue ace-icon fa fa-book bigger-120"></i>
+						Catalogs
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="brown ace-icon fa fa-bell bigger-120"></i>
+						Incidents
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="foo#pictures">
+						<i class="purple ace-icon fa fa-paperclip bigger-120"></i>
+						Custom Notes
+					</a>
+				</li>
+			</ul>
+
+			<div class="tab-content no-border padding-24">
+				<div id="home" class="tab-pane in active">
+					<div class="row">
+						<div class="col-xs-12 col-sm-3 center">
+							<span class="profile-picture">
+								<img class="editable img-responsive" alt=" Avatar" id="avatar2" src="./avatar4.png">
+							</span>
+
+							<div class="space space-4"></div>
+							<div>
+							<a href="foo#" class="btn btn-sm btn-block btn-success">
+								<i class="ace-icon fa fa-plus-circle bigger-120"></i>
+								<span class="bigger-110">Add to Watchers List</span>
+							</a>
+
+							<a href="foo#" class="btn btn-sm btn-block btn-primary">
+								<i class="ace-icon fa fa-envelope-o bigger-110"></i>
+								<span class="bigger-110">Send a message</span>
+							</a>
+							</div>
+						</div><!-- /.col -->
+
+						<div class="col-xs-12 col-sm-9">
+							<h4 class="blue">
+								<span class="middle">John Doe</span>
+
+								<span class="label label-purple arrowed-in-right">
+									<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+									online
+								</span>
+							</h4>
+
+							<div class="profile-user-info">
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Username </div>
+
+									<div class="profile-info-value">
+										<span>alexdoe</span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Location </div>
+
+									<div class="profile-info-value">
+										<i class="fa fa-map-marker light-orange bigger-110"></i>
+										<span>Netherlands</span>
+										<span>Amsterdam</span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Age </div>
+
+									<div class="profile-info-value">
+										<span>38</span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Joined </div>
+
+									<div class="profile-info-value">
+										<span>2010/06/20</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="hr hr-8 dotted"></div>
+
+					</div><!-- /.col -->
+					</div><!-- /.row -->
+
+					<div class="space-20"></div>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-6">
+							<div class="widget-box transparent">
+								<div class="widget-header widget-header-small">
+									<h4 class="widget-title smaller">
+										
+									</h4>
+								</div>
+
+								<div class="widget-body">
+									<div class="widget-main">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /#home -->
+
+				<div id="feed" class="tab-pane">
+					<div class="profile-feed row">
+						<div class="col-sm-6">
+							<div class="profile-activity clearfix">
+								<div>
+									<img class="pull-left" alt="Alex Doe&#39;s avatar" src="./avatar1.png">
+									<a class="user" href="foo#"> Alex Doe </a>
+									changed his profile photo.
+									<a href="foo#">Take a look</a>
+
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										an hour ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<img class="pull-left" alt="Susan Smith&#39;s avatar" src="./avatar2.png">
+									<a class="user" href="foo#"> Susan Smith </a>
+
+									is now friends with Alex Doe.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										2 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<i class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
+									<a class="user" href="foo#"> Alex Doe </a>
+									joined
+									<a href="foo#">Country Music</a>
+
+									group.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										5 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<i class="pull-left thumbicon fa fa-picture-o btn-info no-hover"></i>
+									<a class="user" href="foo#"> Alex Doe </a>
+									uploaded a new photo.
+									<a href="foo#">Take a look</a>
+
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										5 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<img class="pull-left" alt="David Palms&#39;s avatar" src="./avatar3.png">
+									<a class="user" href="foo#"> David Palms </a>
+
+									left a comment on Alex's wall.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										8 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+						</div><!-- /.col -->
+
+						<div class="col-sm-6">
+							<div class="profile-activity clearfix">
+								<div>
+									<i class="pull-left thumbicon fa fa-pencil-square-o btn-pink no-hover"></i>
+									<a class="user" href="foo#"> Alex Doe </a>
+									published a new blog post.
+									<a href="foo#">Read now</a>
+
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										11 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<img class="pull-left" alt="Alex Doe&#39;s avatar" src="./avatar4.png">
+									<a class="user" href="foo#"> Alex Doe </a>
+
+									upgraded his skills.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										12 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<i class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
+									<a class="user" href="foo#"> Alex Doe </a>
+
+									logged in.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										12 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<i class="pull-left thumbicon fa fa-power-off btn-inverse no-hover"></i>
+									<a class="user" href="foo#"> Alex Doe </a>
+
+									logged out.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										16 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="profile-activity clearfix">
+								<div>
+									<i class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
+									<a class="user" href="foo#"> Alex Doe </a>
+
+									logged in.
+									<div class="time">
+										<i class="ace-icon fa fa-clock-o bigger-110"></i>
+										16 hours ago
+									</div>
+								</div>
+
+								<div class="tools action-buttons">
+									<a href="foo#" class="blue">
+										<i class="ace-icon fa fa-pencil bigger-125"></i>
+									</a>
+
+									<a href="foo#" class="red">
+										<i class="ace-icon fa fa-times bigger-125"></i>
+									</a>
+								</div>
+							</div>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+
+					<div class="space-12"></div>
+
+					<div class="center">
+						<button type="button" class="btn btn-sm btn-primary btn-white btn-round">
+							<i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
+							<span class="bigger-110">View more activities</span>
+
+							<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
+						</button>
+					</div>
+				</div><!-- /#feed -->
+
+				<div id="friends" class="tab-pane">
+					<div class="profile-users clearfix">
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar6.png" alt="Bob Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-online"></span>
+											Bob Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">Content Editor</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 orange"></i>
+											<span class="green"> 20 mins ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar1.png" alt="Rose Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-offline"></span>
+											Rose Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">Graphic Designer</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 grey"></i>
+											<span class="grey"> 30 min ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar2.png" alt="Jim Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-busy"></span>
+											Jim Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">SEO &amp; Advertising</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 red"></i>
+											<span class="grey"> 1 hour ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar3.png" alt="Alex Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-idle"></span>
+											Alex Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">Marketing</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 orange"></i>
+											<span class=""> 40 minutes idle </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar4.png" alt="Phil Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-online"></span>
+											Phil Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">Public Relations</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 orange"></i>
+											<span class="green"> 2 hours ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar6.png" alt="Susan Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-online"></span>
+											Susan Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">HR Management</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 orange"></i>
+											<span class="green"> 20 mins ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar1.png" alt="Jennifer Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-offline"></span>
+											Jennifer Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">Graphic Designer</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 grey"></i>
+											<span class="grey"> 2 hours ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="itemdiv memberdiv">
+							<div class="inline pos-rel">
+								<div class="user">
+									<a href="foo#">
+										<img src="./avatar2.png" alt="Alexa Doe&#39;s avatar">
+									</a>
+								</div>
+
+								<div class="body">
+									<div class="name">
+										<a href="foo#">
+											<span class="user-status status-offline"></span>
+											Alexa Doe
+										</a>
+									</div>
+								</div>
+
+								<div class="popover">
+									<div class="arrow"></div>
+
+									<div class="popover-content">
+										<div class="bolder">Accounting</div>
+
+										<div class="time">
+											<i class="ace-icon fa fa-clock-o middle bigger-120 grey"></i>
+											<span class="grey"> 4 hours ago </span>
+										</div>
+
+										<div class="hr dotted hr-8"></div>
+
+										<div class="tools action-buttons">
+											<a href="foo#">
+												<i class="ace-icon fa fa-facebook-square blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+											</a>
+
+											<a href="foo#">
+												<i class="ace-icon fa fa-google-plus-square red bigger-150"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hr hr10 hr-double"></div>
+
+					<ul class="pager pull-right">
+						<li class="previous disabled">
+							<a href="foo#">← Prev</a>
+						</li>
+
+						<li class="next">
+							<a href="foo#">Next →</a>
+						</li>
+					</ul>
+				</div><!-- /#friends -->
+
+				<div id="pictures" class="tab-pane">
+					<ul class="ace-thumbnails">
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="./saved_resource">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="#/200/200/nature/2/">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="./saved_resource(1)">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="#/200/200/nature/4/">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="#/200/200/nature/5/">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="#/200/200/nature/6/">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="./saved_resource(2)">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+
+						<li>
+							<a href="foo#" data-rel="colorbox">
+								<img alt="150x150" src="./saved_resource">
+								<div class="text">
+									<div class="inner">Sample Caption on Hover</div>
+								</div>
+							</a>
+
+							<div class="tools tools-bottom">
+								<a href="foo#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="foo#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div><!-- /#pictures -->
+			</div>
+		</div>
+	</div>
+  </div>
+
+    <script>
+  	$(document).ready(function() {
+		$('.user_wrapper').css({display:"block"});
+		$('.user-profile').css({display:"block"});
+		$('.heading_wrapper').css({display:"block"});
+		$('.form-signin').css({display:"none"});
+	});
+  </script>
+
+</body></html>

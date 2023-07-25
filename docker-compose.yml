@@ -1,0 +1,26 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+     - "2181:12181"
+  kafka:
+    image: spotify/kafka
+    ports:
+      - "9092:9092"
+      - "12181:2181"
+    hostname: kafka
+    expose:
+      - "9092"
+      - "2181"
+    links:
+      - zookeeper
+    environment:
+      TOPICS: aosec_topic_lenel
+  redis:
+    image: redis
+    ports:
+      - "6379"
+    restart: always
+  kibana:
+    image: library/kibana

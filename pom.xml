@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>in.apporchid.security</groupId>
+	<artifactId>ao-security-boilerplate-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.10.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<tomcat.version>8.5.27</tomcat.version>
+	</properties>
+
+	<modules>
+		<!-- <module>ao-security-config-repo</module> <module>ao-security-config-server</module> 
+			<module>ao-security-hystrix</module> <module>ao-security-eureka</module> -->
+
+		<module>ao-security-beans</module>
+		<module>ao-security-notifier-service</module>
+		<module>ao-security-collector-service</module>
+		<module>ao-security-activity-service</module>
+		<module>ao-security-work-location-service</module>
+		<module>ao-security-tee-xml-service</module>
+		<module>ao-security-rules-engine-config</module>
+		<module>ao-security-cep-rules-engine-flink</module>
+		<module>ao-security-cep-rules-engine-esper</module>
+		<module>ao-security-fake-producer</module>
+		<module>ao-security-websockets</module>
+	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.dkanejs.maven.plugins</groupId>
+					<artifactId>docker-compose-maven-plugin</artifactId>
+					<version>1.0.1</version>
+					<configuration>
+						<composeFile>data-services.yml</composeFile>
+						<detachedMode>true</detachedMode>
+					</configuration>
+					<executions>
+						<execution>
+							<id>run-data-services</id>
+							<phase>pre-integration-test</phase>
+							<goals>
+								<goal>up</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>destroy-data-services</id>
+							<phase>post-integration-test</phase>
+							<goals>
+								<goal>down</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

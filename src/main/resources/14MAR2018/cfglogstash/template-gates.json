@@ -1,0 +1,55 @@
+{
+  "template": "mso_gates",
+  "version": 1,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mso_gates": {
+    "mappings": {
+      "doc": {
+        "properties": {
+          "badging_device": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "called_as": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "entry_gate": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "exit_gate": {
+            "type" : "text",
+            "fielddata": true,
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR ev in [ "Access Granted", "Denied, Badge Not in Panel", "Invalid Access Level", "Invalid Badge", "Inactive Badge" ]
+	FILTER j.hour == h AND j.event.Event == ev
+	COLLECT  event = j.event.Event, hour = j.hour, bucket = j.bucket WITH count into length
+	INSERT { "activities" : {
+	    type: event,
+	    hour: hour,
+	    bucket: bucket,
+		size: length
+	}
+	} INTO cloudseer_badging_activities_per_status_pattern_stats_hourly`).getExtra()

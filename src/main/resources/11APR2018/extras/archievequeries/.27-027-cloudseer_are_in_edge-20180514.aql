@@ -1,0 +1,4 @@
+db._query(`FOR s in cloudseer_vpn_servers
+  FOR p in cloudseer_badging_stations
+   FILTER s.situated_at == p.station
+INSERT {_from: s._id, _to: p._id} INTO cloudseer_are_in`).getExtra()

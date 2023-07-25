@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: ao-security-cep-rules-engine-flink
+Implementation-Version: 1.5.10.RELEASE
+Built-By: RH0161
+Implementation-Vendor-Id: com.apporchid
+Build-Jdk: 1.8.0_151
+Implementation-URL: http://projects.spring.io/spring-boot/ao-security-
+ cep-rules-engine-flink/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

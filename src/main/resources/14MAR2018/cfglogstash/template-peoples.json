@@ -1,0 +1,92 @@
+{
+  "template": "mso_peoples",
+  "version": 1,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "Account_Terminatecause": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Badgeid": {
+          "type": "long"
+        },
+        "Display": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "First": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Identity": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Iiq_Id": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Last": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "Upn": {
+          "type": "long"
+        },
+        "Userid": {
+          "type" : "text",
+            "fielddata": true,
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "premiseNumber": {
+          "type": "long"
+        }
+      }
+    }
+  }
+}

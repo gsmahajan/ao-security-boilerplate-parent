@@ -1,0 +1,8 @@
+alerts
+settings
+premises
+locations
+security_team
+source_inventories
+source_myaccess
+source_active_directory_samples

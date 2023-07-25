@@ -1,0 +1,16 @@
+db._query(`FOR j in cloudseer_time_buckets
+FOR h in 0..23
+FOR d in 1..31
+FOR ev in cloudseer_lenel_statuses
+FOR ed IN [ "Entry", "Exit", "IN", "OUT"]
+	FILTER j.hour == h AND j.day == d AND j.event.Event == ev.type AND CONTAINS(j.event.Device, ed)
+	COLLECT  event = j.event.Event, device = ed, day = j.day, hour = j.hour, month = j.month WITH count into length
+	INSERT { "activities" : {
+	    type: event,
+	    category: device,
+	    size: length,
+	    day: day,
+	    hour:hour,
+	    month:month
+	}
+	} INTO cloudseer_badging_stats_per_day_average`).getExtra()

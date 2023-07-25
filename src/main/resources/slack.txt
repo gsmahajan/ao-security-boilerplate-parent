@@ -1,0 +1,10 @@
+https://hooks.slack.com/services/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
+
+https://apporchid.slack.com/apps/A0F7XDUAZ-incoming-webhooks?page=1
+https://api.slack.com/incoming-webhooks
+
+
+curl -X POST --data-urlencode 'payload={"text": "<http://10.7.20.148:18529/cloudseer/peoples/9931300|Click here> for sample details"}' https://hooks.slack.com/services/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
+
+
+curl -X POST --data-urlencode 'payload={"text": "Welcome. this is a test message"}' https://hooks.slack.com/services/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

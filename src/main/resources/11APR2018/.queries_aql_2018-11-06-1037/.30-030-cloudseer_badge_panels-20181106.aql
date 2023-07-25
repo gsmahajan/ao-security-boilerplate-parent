@@ -1,0 +1,15 @@
+db._query(`FOR l in cloudseer_time_buckets
+FOR panel in (FOR q in cloudseer_time_buckets RETURN DISTINCT q.event.Panel)
+FILTER UPPER(l.event.Panel) == UPPER(panel)
+COLLECT pn = panel, peoples = (FOR p in cloudseer_peoples
+        FILTER p.activities.badge != NULL
+        FOR ws IN (FOR place in p.activities.badge RETURN place)
+        FILTER UPPER(pn) == UPPER(ws.place)
+        COLLECT displayName = p.displayName, empId = p.empId, badge= p.badgeId, since = p.since, csId = p._id, sessions = ws.links
+        RETURN { displayName, badge, since, empId, csId, sessions }
+        )
+INSERT {
+    panel: pn,
+    size: LENGTH(peoples),
+    badge_event_attributes: peoples
+} INTO cloudseer_badge_panels`).getExtra()

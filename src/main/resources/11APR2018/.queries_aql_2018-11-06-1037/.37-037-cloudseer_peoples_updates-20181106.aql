@@ -1,0 +1,1 @@
+db._query(`FOR person IN cloudseer_peoples UPDATE person WITH { user_vpncount_by_day: (FOR q in cloudseer_vpn_timebuckets FOR n in 1..31 FILTER q.day == n AND UPPER(q.event.Identity) == UPPER(person.logon) COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length})} IN cloudseer_peoples  OPTIONS { mergeObjects: true }`).getExtra()

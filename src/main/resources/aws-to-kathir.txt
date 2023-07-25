@@ -1,0 +1,36 @@
+https://puphpet.com/#vagrantfile-aws
+
+
+$ cat .ssh/config
+
+Host *
+    ServerAliveInterval 300
+    ServerAliveCountMax 5
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ControlMaster auto
+
+Host amw_nonprod_bastion
+     #HostName  awsnlbas001.amwaternp.net
+     HostName 10.7.10.7
+     User mahajag
+     Port 22
+     ForwardAgent yes
+     IdentityFile ~/.ssh/id_rsa
+
+
+# Environments
+
+Host amw_security_dev
+     HostName 10.7.20.148
+     User mahajag
+     Port 22
+     IdentityFile ~/.ssh/bastion_apporchid_nonprod.key
+     IdentityFile ~/.ssh/id_rsa
+     ProxyCommand ssh amw_nonprod_bastion -W %h:%p
+     #ProxyCommand ssh amw_nonprod_bastion nc %h %p # nc command not found on bastion
+     #LocalForward 15601 127.0.0.1:5601
+
+
+#VPN Door - F5 => https://awsnonprodvpn.amwaternp.com/
+

@@ -1,0 +1,49 @@
+______     _                                 _   _           
+| ___ \   | |                               | | (_)          
+| |_/ /___| |_ _ __ ___  ___ _ __   ___  ___| |_ ___   _____ 
+|    // _ \ __| '__/ _ \/ __| '_ \ / _ \/ __| __| \ \ / / _ \
+| |\ \  __/ |_| | | (_) \__ \ |_) |  __/ (__| |_| |\ V /  __/
+\_| \_\___|\__|_|  \___/|___/ .__/ \___|\___|\__|_| \_/ \___|
+                            | |                              
+                            |_|                              
+
+# ArangoDB Report Prepared By - Girish Mahajan (Accion)
+# 20th April 2018
+
+
+
+
+# Peoples MSO's
+
+FOR c in cloudseer_peoples FILTER LENGTH(c.activities.vpn) > 5  AND c.badgeId != NULL RETURN c
+FOR c in cloudseer_peoples FILTER LENGTH(c.activities.badge) != 0 RETURN c
+
+
+
+# Probability candidates 
+
+FOR a in cloudseer_daily_hourwise_total_persons RETURN a
+FOR a in cloudseer_alltime_hourwise_total_persons RETURN a
+FOR a in cloudseer_daily_hourwise_total_badging RETURN a
+
+
+# Other stats 
+
+FOR a in cloudseer_badging_stations_stats_hourly RETURN a
+FOR a in cloudseer_badging_total_stats_hourly RETURN a
+FOR a in cloudseer_badging_pattern_stats_hourly RETURN a
+FOR a in cloudseer_badging_out_stats_hourly RETURN a
+FOR a in cloudseer_badging_activities_per_status_pattern_stats_daily RETURN a
+FOR a in cloudseer_badging_activities_per_status_pattern_stats_hourly RETURN a
+FOR a in cloudseer_badging_entry_exit_stats_hourly RETURN a
+FOR a in cloudseer_daywise_hourwise_stats_per_bucket RETURN a
+FOR a in cloudseer_daily_hourwise_total_badging RETURN a
+FOR a in cloudseer_daily_hourwise_total_persons RETURN a
+
+
+# Data / Sources -
+FOR a in cloudseer_lenel_statuses RETURN { type: a.type, occurances: a.occurances}
+
+
+# Timeseries data 
+FOR a in cloudseer_time_buckets LIMIT 10 RETURN a

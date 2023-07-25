@@ -1,0 +1,5 @@
+db._query(`FOR a in cloudseer_laptops
+  FOR p in cloudseer_peoples
+   FOR mac in p.activities.vpn[*].mac
+   FILTER mac == a.mac
+INSERT {_from: p._id, _to: a._id } INTO cloudseer_owns`).getExtra()

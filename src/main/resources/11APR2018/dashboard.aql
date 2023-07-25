@@ -1,0 +1,10 @@
+db._query(`INSERT { global_total_services: 2, global_data_processed_at: DATE_NOW(), global_alltime_badgecount: (FOR q in cloudseer_time_buckets RETURN DISTINCT LENGTH (cloudseer_time_buckets))[0],
+global_alltime_vpncount: (FOR q in cloudseer_vpn_timebuckets RETURN DISTINCT LENGTH (cloudseer_vpn_timebuckets))[0],
+global_badgecount_by_hour: (FOR n in 0..23 FOR q in cloudseer_time_buckets FILTER n == q.hour COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length}),
+global_badgecount_by_day: (FOR n in 1..31 FOR q in cloudseer_time_buckets FILTER n == q.day COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length}),
+global_badgecount_by_weekday: (FOR q in cloudseer_time_buckets FOR n in 1..7 FILTER n == q.week COLLECT bucket_weekday = q.weekday WITH count INTO length RETURN {bucket_week:bucket_weekday, count:length}),
+global_badgecount_by_week_of_year: (FOR q in cloudseer_time_buckets FOR n in 1..53 FILTER n == q.week_number COLLECT bucket_week_of_year = n WITH count INTO length RETURN {bucket_week_of_year:bucket_week_of_year, count:length}),
+global_vpncount_by_hour: (FOR n in 0..23 FOR q in cloudseer_vpn_timebuckets FILTER n == q.hour COLLECT bucket_hour = n WITH count INTO length RETURN {bucket_hour:bucket_hour, count:length}),
+global_vpncount_by_day: (FOR n in 1..31 FOR q in cloudseer_vpn_timebuckets FILTER n == q.day COLLECT bucket_day = n WITH count INTO length RETURN {bucket_day:bucket_day, count:length}),
+global_vpncount_by_weekday: (FOR n in 1..7 FOR q in cloudseer_vpn_timebuckets FILTER n == q.week COLLECT bucket_weekday = q.weekday WITH count INTO length RETURN {bucket_week:bucket_weekday, count:length}),
+global_vpncount_by_week_of_year: (FOR q in cloudseer_vpn_timebuckets FOR n in 1..53 FILTER n == q.week_number COLLECT bucket_week_of_year = n WITH count INTO length RETURN {bucket_week_of_year:bucket_week_of_year, count:length})} IN cloudseer_dashboard OPTIONS { mergeObjects: true }`).getExtra()
