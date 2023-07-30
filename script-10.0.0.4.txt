@@ -1,0 +1,515 @@
+RH0161@ALIPL5107 MINGW64 ~
+$ ssh aoadmin@10.0.0.4
+Last login: Thu Jan 25 11:12:25 2018 from 10.5.0.130
+[aoadmin@meteropsdev ~]$ cat /apporchid/start.sh
+[aoadmin@meteropsdev ~]$ cat /apporchid/start.sh
+#! /bin/bash
+#
+#
+#           |                        ..|''||                   '||       ||       '||
+#          |||    ... ...  ... ...  .|'    ||  ... ..    ....   || ..   ...     .. ||
+#         |  ||    ||'  ||  ||'  || ||      ||  ||' '' .|   ''  ||' ||   ||   .'  '||
+#        .''''|.   ||    |  ||    | '|.     ||  ||     ||       ||  ||   ||   |.   ||
+#       .|.  .||.  ||...'   ||...'   ''|...|'  .||.     '|...' .||. ||. .||.  '|..'||.
+#                  ||       ||
+#                 ''''     ''''
+#
+#
+#
+# Copyright 2018
+
+
+#stop all running meterops processes
+ps -eaf|grep java | grep meter |  awk '{print $2}' | xargs sudo kill -9 $1
+
+
+#clone and package latest develop code
+cd /apporchid/temp/girish.mahajan/
+
+sudo ./prepare-and-be-ready.sh
+
+#need to
+sudo chown -R aoadmin:aoadmin /apporchid/meterops
+sudo chown -R aoadmin:aoadmin /apporchid/meterops-ui
+
+#start meterops api
+cd /apporchid/meterops/bin/
+
+sudo ./start-meterops.sh
+
+
+#start meterops-ui
+cd /apporchid/meterops-ui/bin/
+
+sudo ./start-meterops-ui.sh
+
+
+#pptional tail all
+
+tail -f /apporchid/meterops*/logs/*
+[aoadmin@meteropsdev ~]$ cat /apporchid/temp/girish.mahajan/prepare-and-be-ready.sh
+[aoadmin@meteropsdev ~]$ cat /apporchid/temp/girish.mahajan/prepare-and-be-ready.sh | more
+#! /bin/bash
+#
+#
+#           |                        ..|''||                   '||       ||       '||
+#          |||    ... ...  ... ...  .|'    ||  ... ..    ....   || ..   ...     .. ||
+#         |  ||    ||'  ||  ||'  || ||      ||  ||' '' .|   ''  ||' ||   ||   .'  '||
+#        .''''|.   ||    |  ||    | '|.     ||  ||     ||       ||  ||   ||   |.   ||
+#       .|.  .||.  ||...'   ||...'   ''|...|'  .||.     '|...' .||. ||. .||.  '|..'||.
+#                  ||       ||
+#                 ''''     ''''
+#
+#
+#
+# Copyright 2018
+
+#Script will checkout code from git, pack it up and place where it needed to be.
+
+export GRADLE_HOME="/apporchid/temp/girish.mahajan/gradle-4.4.1/"
+
+LOGFILE="/apporchid/temp/girish.mahajan/bashlog"
+
+DEFDIR="$(pwd)"
+
+HOMEDIR="/apporchid/temp/girish.mahajan/"
+
+function log_warn {
+        echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[33m# WARNING # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function log_info {
+         echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[32m# INFO    # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function log_debug {
+         echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[32m# INFO    # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function log_error {
+        echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[31m# ERROR   # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function displayGradleVersion {
+ log_info "Using gradle"
+ $GRADLE_HOME/bin/gradle -v
+}
+
+function prompt {
+    log_warn "$1"
+    while true; do
+        read -p "$* [y/n]: " yn
+        case $yn in
+            [Yy]*) return 0  ;;
+            [Nn]*) log_error "Mission Aborted" ; exit 1 ;;
+        esac
+    done
+}
+
+
+function checkoutCode {
+        local directory="$1"
+        local repository="$2"
+        local switchBranch="$3"
+        local projectName="$4"
+
+        [[ "develop" == "$switchBranch" ]] || prompt "branch requested is not a develop one do we really want to proceed ??"
+
+        log_debug "$FUNCNAME repository='$repository'           branch=$switchBranch"
+
+
+        log_info "cloing repository into directory $directory";
+        mkdir $directory; cd $HOMEDIR/$directory/;
+        git clone -b $switchBranch "$repository"
+
+        cd $(ls -l | grep _);
+
+        git status
+
+        ls -l
+        cd ../
+
+        log_info "---------------------------------------"
+}
+
+
+function packageCode {
+        local directory="$1";
+        local projectName="$2"
+        local artifact="$3";
+
+        cd $HOMEDIR/$directory/$projectName/$artifact;
+        log_debug "We're in => pwd=$(pwd)"
+
+        $GRADLE_HOME/bin/gradle bootRepackage
+}
+
+function copyArtifactsToDeployLocation {
+
+        local directory="$1";
+        local projectName="$2";
+        local moduleName="$3"
+        local artifactName="$4"
+        local destination="$4"
+
+        local NowDate=$(date +%Y-%m-%d-%H%M);
+
+        ls -lrta $HOMEDIR/$directory/$projectName/$moduleName/build*/lib*/$artifactName
+
+        log_info "Copying - from $directory/$projectName/$moduleName/build/libs/$artifactName to -> $destination/"
+
+
+        cp $directory/imp_amwater_meterops/meterOps/build/libs/meterOps-1.0.1.war $destination/
+        cp $directory/imp_amwater_meterops/meterOps-ui/build/libs/meterOps-ui-1.0.0-SNAPSHOT.war $destination/
+
+        ls -lrta $destination/
+}
+
+
+cd $HOMEDIR;
+UUID="temp-$(cat  /proc/sys/kernel/random/uuid)"
+
+
+#Main script begin here -
+
+log_warn "Source Directory - /apporchid/temp/girish.mahajan/$UUID/";
+
+displayGradleVersion
+
+checkoutCode $UUID https://github.com/AppOrchid/imp_amwater_meterops.git develop imp_amwater_meterops
+
+packageCode $UUID imp_amwater_meterops meterOps
+packageCode $UUID imp_amwater_meterops meterOps-ui
+
+
+##### FIXME BEGIN ######
+mv /apporchid/meterops/lib/meterOps-1.0.1.war /apporchid/meterops/lib/meterOps-1.0.1.war_$NowDate
+mv /apporchid/meterops-ui/lib/meterOps-ui-1.0.0-SNAPSHOT.war /apporchid/meterops-ui/lib/meterOps-ui-1.0.0-SNAPSHOT.war_$NowDate
+##### FIXME END ########
+
+#copyArtifactsToDeployLocation $UUID imp_amwater_meterops meterOps meterOps-1.0.1.war /apporchid/meterops/lib/
+
+#copyArtifactsToDeployLocation $UUID imp_amwater_meterops meterOps-ui meterOps-ui-1.0.0-SNAPSHOT.war /apporchid/meterops-ui/lib/
+
+
+sudo cp $HOMEDIR/$UUID/imp_amwater_meterops/meterOps/build/libs/meterOps-1.0.1.war /apporchid/meterops/lib/
+sudo cp $HOMEDIR/$UUID/imp_amwater_meterops/meterOps-ui/build/libs/meterOps-ui-1.0.0-SNAPSHOT.war /apporchid/meterops-ui/lib/
+
+log_info "sha256sum for meterops war baked $(sha256sum $HOMEDIR/$UUID/imp_amwater_meterops/meterOps/build/libs/meterOps-1.0.1.war)"
+log_info "sha256sum for meterops-ui war baked $(sha256sum $HOMEDIR/$UUID/imp_amwater_meterops/meterOps-ui/build/libs/meterOps-ui-1.0.0-SNAPSHOT.war)"
+
+log_info "sha256sum for meterops-ui war deployed $(sha256sum /apporchid/meterops/lib/meterOps-1.0.1.war)"
+log_info "sha256sum for meterops-ui war deployed $(sha256sum /apporchid/meterops-ui/lib/meterOps-ui-1.0.0-SNAPSHOT.war)"
+
+cd $DEFDIR
+[aoadmin@meteropsdev ~]$ cat /apporchid/start.sh
+#! /bin/bash
+#
+#
+#           |                        ..|''||                   '||       ||       '||
+#          |||    ... ...  ... ...  .|'    ||  ... ..    ....   || ..   ...     .. ||
+#         |  ||    ||'  ||  ||'  || ||      ||  ||' '' .|   ''  ||' ||   ||   .'  '||
+#        .''''|.   ||    |  ||    | '|.     ||  ||     ||       ||  ||   ||   |.   ||
+#       .|.  .||.  ||...'   ||...'   ''|...|'  .||.     '|...' .||. ||. .||.  '|..'||.
+#                  ||       ||
+#                 ''''     ''''
+#
+#
+#
+# Copyright 2018
+
+
+#stop all running meterops processes
+ps -eaf|grep java | grep meter |  awk '{print $2}' | xargs sudo kill -9 $1
+
+
+#clone and package latest develop code
+cd /apporchid/temp/girish.mahajan/
+
+sudo ./prepare-and-be-ready.sh
+
+#need to
+sudo chown -R aoadmin:aoadmin /apporchid/meterops
+sudo chown -R aoadmin:aoadmin /apporchid/meterops-ui
+
+#start meterops api
+cd /apporchid/meterops/bin/
+
+sudo ./start-meterops.sh
+
+
+#start meterops-ui
+cd /apporchid/meterops-ui/bin/
+
+sudo ./start-meterops-ui.sh
+
+
+#pptional tail all
+
+tail -f /apporchid/meterops*/logs/*
+[aoadmin@meteropsdev ~]$ cat /apporchid/meterops/bin/start-meterops.sh
+#! /bin/bash
+#
+#
+#           |                        ..|''||                   '||       ||       '||
+#          |||    ... ...  ... ...  .|'    ||  ... ..    ....   || ..   ...     .. ||
+#         |  ||    ||'  ||  ||'  || ||      ||  ||' '' .|   ''  ||' ||   ||   .'  '||
+#        .''''|.   ||    |  ||    | '|.     ||  ||     ||       ||  ||   ||   |.   ||
+#       .|.  .||.  ||...'   ||...'   ''|...|'  .||.     '|...' .||. ||. .||.  '|..'||.
+#                  ||       ||
+#                 ''''     ''''
+#
+#
+#
+# Copyright 2018
+#
+#
+
+
+
+#MeterOps
+
+
+AppName="meterOps"
+AppVersion="1.0.1"
+AppDistributionType="war"
+
+
+
+SpringBootArtifact=../lib/$AppName-$AppVersion.$AppDistributionType
+
+
+function abort {
+        message="$1"
+        echo "$AppName can not started, reason: $message"
+}
+
+
+#[ ! -e '$SpringBootArtifact' ] && abort "$SpringBootArtifact unable to find at ../lib/ $pwd";
+
+
+echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[32m# INFO    # Apporchid - 2018 - Runner - Starting " $SpringBootArtifact "\033[0m"
+
+#[[ $(ps -eaf | grep $AppName) -le 1 ]] && abort "Can not start, existing application running";
+
+
+nohup java -jar $SpringBootArtifact  --spring.config.location=../config/ >> ../logs/startup.log 2>&1 &
+
+[aoadmin@meteropsdev ~]$ ls -l
+[aoadmin@meteropsdev ~]$ ls -l
+total 32856
+-rw-rw-r--. 1 aoadmin aoadmin   219168 Nov  8 10:54 ao-config_bk.backup
+-rw-rw-r--. 1 aoadmin aoadmin 33421919 Feb 14  2017 elasticsearch-5.2.1.rpm
+[aoadmin@meteropsdev ~]$ cd ^C
+[aoadmin@meteropsdev ~]$ cd
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$
+[aoadmin@meteropsdev ~]$ ls -l
+total 32856
+-rw-rw-r--. 1 aoadmin aoadmin   219168 Nov  8 10:54 ao-config_bk.backup
+-rw-rw-r--. 1 aoadmin aoadmin 33421919 Feb 14  2017 elasticsearch-5.2.1.rpm
+[aoadmin@meteropsdev ~]$ cat /apporchid/start.sh
+#! /bin/bash
+#
+#
+#           |                        ..|''||                   '||       ||       '||
+#          |||    ... ...  ... ...  .|'    ||  ... ..    ....   || ..   ...     .. ||
+#         |  ||    ||'  ||  ||'  || ||      ||  ||' '' .|   ''  ||' ||   ||   .'  '||
+#        .''''|.   ||    |  ||    | '|.     ||  ||     ||       ||  ||   ||   |.   ||
+#       .|.  .||.  ||...'   ||...'   ''|...|'  .||.     '|...' .||. ||. .||.  '|..'||.
+#                  ||       ||
+#                 ''''     ''''
+#
+#
+#
+# Copyright 2018
+
+
+#stop all running meterops processes
+ps -eaf|grep java | grep meter |  awk '{print $2}' | xargs sudo kill -9 $1
+
+
+#clone and package latest develop code
+cd /apporchid/temp/girish.mahajan/
+
+sudo ./prepare-and-be-ready.sh
+
+#need to
+sudo chown -R aoadmin:aoadmin /apporchid/meterops
+sudo chown -R aoadmin:aoadmin /apporchid/meterops-ui
+
+#start meterops api
+cd /apporchid/meterops/bin/
+
+sudo ./start-meterops.sh
+
+
+#start meterops-ui
+cd /apporchid/meterops-ui/bin/
+
+sudo ./start-meterops-ui.sh
+
+
+#pptional tail all
+
+tail -f /apporchid/meterops*/logs/*
+[aoadmin@meteropsdev ~]$ cat /apporchid/temp/girish.mahajan/prepare-and-be-ready.sh
+[aoadmin@meteropsdev ~]$ cat /apporchid/temp/girish.mahajan/prepare-and-be-ready.sh
+#! /bin/bash
+#
+#
+#           |                        ..|''||                   '||       ||       '||
+#          |||    ... ...  ... ...  .|'    ||  ... ..    ....   || ..   ...     .. ||
+#         |  ||    ||'  ||  ||'  || ||      ||  ||' '' .|   ''  ||' ||   ||   .'  '||
+#        .''''|.   ||    |  ||    | '|.     ||  ||     ||       ||  ||   ||   |.   ||
+#       .|.  .||.  ||...'   ||...'   ''|...|'  .||.     '|...' .||. ||. .||.  '|..'||.
+#                  ||       ||
+#                 ''''     ''''
+#
+#
+#
+# Copyright 2018
+
+#Script will checkout code from git, pack it up and place where it needed to be.
+
+export GRADLE_HOME="/apporchid/temp/girish.mahajan/gradle-4.4.1/"
+
+LOGFILE="/apporchid/temp/girish.mahajan/bashlog"
+
+DEFDIR="$(pwd)"
+
+HOMEDIR="/apporchid/temp/girish.mahajan/"
+
+function log_warn {
+        echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[33m# WARNING # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function log_info {
+         echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[32m# INFO    # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function log_debug {
+         echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[32m# INFO    # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function log_error {
+        echo -e `date +%d/%m/%Y-%H:%M:%S ` "\033[31m# ERROR   # " $1 "\033[0m" | tee -a $LOGFILE;
+}
+
+function displayGradleVersion {
+ log_info "Using gradle"
+ $GRADLE_HOME/bin/gradle -v
+}
+
+function prompt {
+    log_warn "$1"
+    while true; do
+        read -p "$* [y/n]: " yn
+        case $yn in
+            [Yy]*) return 0  ;;
+            [Nn]*) log_error "Mission Aborted" ; exit 1 ;;
+        esac
+    done
+}
+
+
+function checkoutCode {
+        local directory="$1"
+        local repository="$2"
+        local switchBranch="$3"
+        local projectName="$4"
+
+        [[ "develop" == "$switchBranch" ]] || prompt "branch requested is not a develop one do we really want to proceed ??"
+
+        log_debug "$FUNCNAME repository='$repository'           branch=$switchBranch"
+
+
+        log_info "cloing repository into directory $directory";
+        mkdir $directory; cd $HOMEDIR/$directory/;
+        git clone -b $switchBranch "$repository"
+
+        cd $(ls -l | grep _);
+
+        git status
+
+        ls -l
+        cd ../
+
+        log_info "---------------------------------------"
+}
+
+
+function packageCode {
+        local directory="$1";
+        local projectName="$2"
+        local artifact="$3";
+
+        cd $HOMEDIR/$directory/$projectName/$artifact;
+        log_debug "We're in => pwd=$(pwd)"
+
+        $GRADLE_HOME/bin/gradle bootRepackage
+}
+
+function copyArtifactsToDeployLocation {
+
+        local directory="$1";
+        local projectName="$2";
+        local moduleName="$3"
+        local artifactName="$4"
+        local destination="$4"
+
+        local NowDate=$(date +%Y-%m-%d-%H%M);
+
+        ls -lrta $HOMEDIR/$directory/$projectName/$moduleName/build*/lib*/$artifactName
+
+        log_info "Copying - from $directory/$projectName/$moduleName/build/libs/$artifactName to -> $destination/"
+
+
+        cp $directory/imp_amwater_meterops/meterOps/build/libs/meterOps-1.0.1.war $destination/
+        cp $directory/imp_amwater_meterops/meterOps-ui/build/libs/meterOps-ui-1.0.0-SNAPSHOT.war $destination/
+
+        ls -lrta $destination/
+}
+
+
+cd $HOMEDIR;
+UUID="temp-$(cat  /proc/sys/kernel/random/uuid)"
+
+
+#Main script begin here -
+
+log_warn "Source Directory - /apporchid/temp/girish.mahajan/$UUID/";
+
+displayGradleVersion
+
+checkoutCode $UUID https://github.com/AppOrchid/imp_amwater_meterops.git develop imp_amwater_meterops
+
+packageCode $UUID imp_amwater_meterops meterOps
+packageCode $UUID imp_amwater_meterops meterOps-ui
+
+
+##### FIXME BEGIN ######
+mv /apporchid/meterops/lib/meterOps-1.0.1.war /apporchid/meterops/lib/meterOps-1.0.1.war_$NowDate
+mv /apporchid/meterops-ui/lib/meterOps-ui-1.0.0-SNAPSHOT.war /apporchid/meterops-ui/lib/meterOps-ui-1.0.0-SNAPSHOT.war_$NowDate
+##### FIXME END ########
+
+#copyArtifactsToDeployLocation $UUID imp_amwater_meterops meterOps meterOps-1.0.1.war /apporchid/meterops/lib/
+
+#copyArtifactsToDeployLocation $UUID imp_amwater_meterops meterOps-ui meterOps-ui-1.0.0-SNAPSHOT.war /apporchid/meterops-ui/lib/
+
+
+sudo cp $HOMEDIR/$UUID/imp_amwater_meterops/meterOps/build/libs/meterOps-1.0.1.war /apporchid/meterops/lib/
+sudo cp $HOMEDIR/$UUID/imp_amwater_meterops/meterOps-ui/build/libs/meterOps-ui-1.0.0-SNAPSHOT.war /apporchid/meterops-ui/lib/
+
+log_info "sha256sum for meterops war baked $(sha256sum $HOMEDIR/$UUID/imp_amwater_meterops/meterOps/build/libs/meterOps-1.0.1.war)"
+log_info "sha256sum for meterops-ui war baked $(sha256sum $HOMEDIR/$UUID/imp_amwater_meterops/meterOps-ui/build/libs/meterOps-ui-1.0.0-SNAPSHOT.war)"
+
+log_info "sha256sum for meterops-ui war deployed $(sha256sum /apporchid/meterops/lib/meterOps-1.0.1.war)"
+log_info "sha256sum for meterops-ui war deployed $(sha256sum /apporchid/meterops-ui/lib/meterOps-ui-1.0.0-SNAPSHOT.war)"
+
+cd $DEFDIR
